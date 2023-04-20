@@ -1,1 +1,13 @@
-{"version":3,"file":"main.js","mappings":";;;;;AAAA;AACA;AACA;AACA","sources":["webpack://titl/./src/index.js"],"sourcesContent":["function c() {\n  console.log(\"hello\");\n  console.log(\"wrld\");\n}\n"],"names":[],"sourceRoot":""}
+{
+  "version": 3,
+  "file": "main.js",
+  "mappings": ";;;;;AAAA;AACA;AACA;AACA",
+  "sources": [
+    "webpack://titl/./src/index.js"
+  ],
+  "sourcesContent": [
+    "function c() {\n  console.log(\"hello\");\n  console.log(\"wrld\");\n}\n"
+  ],
+  "names": [],
+  "sourceRoot": ""
+}
