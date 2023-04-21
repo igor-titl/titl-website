@@ -11,11 +11,11 @@ export default class extends module {
 
   init(e) {
     
-    let elem = new SplitType( this.el, { types: 'lines' })
+    let elem = new SplitType( this.el, { types: 'lines, words' })
 
 
 
-gsap.from(elem.lines, {
+gsap.from(elem.words, {
     opacity: 0,
     y: 20,
     rotate: 2,
