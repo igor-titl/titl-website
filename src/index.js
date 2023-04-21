@@ -1,6 +1,8 @@
 import modular from "modujs";
 import * as modules from "./modules";
 
+const html = document.documentElement;
+
 const appHeight = () => {
   const doc = document.documentElement;
   doc.style.setProperty("--vh", `${window.innerHeight}px`);
