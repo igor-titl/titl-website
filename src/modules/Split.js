@@ -8,11 +8,9 @@ export default class extends module {
     super(m);
     }
 
-
   init(e) {
     
-    let elem = new SplitType( this.el, { types: 'lines, words' })
-
+let elem = new SplitType( this.el, { types: 'lines, words' })
 
 
 gsap.from(elem.words, {
