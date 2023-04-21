@@ -17,7 +17,7 @@ export default class extends module {
 
 gsap.from(elem.words, {
     opacity: 0,
-    y: 20,
+    y: '100%',
     rotate: 2,
     duration: 0.5,
     stagger: { amount: 0.3 },
