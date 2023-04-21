@@ -11,7 +11,7 @@ export default class extends module {
 
   init(e) {
     
-    let elem = new SplitType( this.el, { types: 'words, chars' })
+    let elem = new SplitType( this.el, { types: 'lines' })
 
 
 
