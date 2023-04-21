@@ -9,12 +9,10 @@ export default class extends module {
     init() {
         this.swiper = new Swiper(this.el, {
            speed: 200,
-           effect: 'fade',
            loop: true,
            autoplay: {
             delay: 2000,
            },
-           direction: 'vertical',
         });
     }
 }
