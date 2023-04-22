@@ -10,7 +10,7 @@ export default class extends module {
 
   init(e) {
     
-let elem = new SplitType( this.el, { types: 'lines, words' })
+let elem = new SplitType( this.el, { types: 'words' })
 
 
 gsap.from(elem.words, {
