@@ -3,13 +3,6 @@ import * as modules from "./modules";
 
 const html = document.documentElement;
 
-const appHeight = () => {
-  const doc = document.documentElement;
-  doc.style.setProperty("--vh", `${window.innerHeight}px`);
-};
-// window.addEventListener("resize", appHeight);
-appHeight();
-
 const app = new modular({
   modules: modules,
 });
