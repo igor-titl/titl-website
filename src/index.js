@@ -1,7 +1,7 @@
 import modular from "modujs";
 import * as modules from "./modules";
-
-const html = document.documentElement;
+import globals from "./globals";
+import { html } from "./utils/environment";
 
 const app = new modular({
   modules: modules,
@@ -25,6 +25,8 @@ window.onload = (event) => {
 
 function init() {
   app.init(app);
+
+  globals();
 
   html.classList.add("is-loaded");
   html.classList.add("is-ready");
