@@ -1,3 +1,24 @@
 .c-home-hero {
   --home-hero-height: calc(min(var(--vh, 1vh) * 100, 80vw));
+  height: var(--home-hero-height);
+}
+
+.u-anim-char .word {
+  overflow: hidden;
+  display: inline-block;
+}
+.u-anim-char .char {
+  display: inline-block;
+  transform: translateY(100%);
+}
+/* 
+html .u-anim-char .word {
+  transition-property: filter, opacity, transform;
+  transition-duration: 1.6s;
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+} */
+
+html.is-ready .u-anim-char:not(.-scroll) .word {
+  transform: translateY(0%);
+  transition-delay: calc(var(--word-index) * 60ms);
 }
