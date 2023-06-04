@@ -16,19 +16,13 @@ export default class extends module {
     // Lifecyle
     ///////////////
     init() {
-        whenReady(EAGER_FONTS).then((fonts) => this.onFontsLoaded(fonts))
+      this.split()
     }
 
     destroy() {
         super.destroy()
     }
 
-    ///////////////
-    // Callbacks
-    ///////////////
-    onFontsLoaded(fonts) {
-        this.split()
-    }
 
     ///////////////
     // Methods
