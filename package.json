@@ -25,6 +25,7 @@
     "modujs": "^1.4.2",
     "modularload": "^1.2.8",
     "split-type": "^0.3.3",
+    "splitting": "^1.0.6",
     "swiper": "^9.2.3"
   },
   "devDependencies": {

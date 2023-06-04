@@ -1,24 +1,39 @@
-import { module } from 'modujs';
-import SplitType from 'split-type';
-import gsap from 'gsap';
-
+import { module } from 'modujs'
+import Splitting from 'splitting'
 
 export default class extends module {
-  constructor(m) {
-    super(m);
+    constructor(m) {
+        super(m)
+
+        // UI
+        this.$el = this.el
+        
+        // Data
+        this.splitType = this.getData('type') ? this.getData('type') : 'chars'
     }
 
-  init(e) {
-    
-let elem = new SplitType( this.el, { types: 'words' })
+    ///////////////
+    // Lifecyle
+    ///////////////
+    init() {
+        whenReady(EAGER_FONTS).then((fonts) => this.onFontsLoaded(fonts))
+    }
 
+    destroy() {
+        super.destroy()
+    }
 
-gsap.from(elem.words, {
-    // opacity: 0,
-    y: '100%',
-    rotate: 2,
-    duration: 0.5,
-    stagger: { amount: 0.3 },
-    })
-   }   
+    ///////////////
+    // Callbacks
+    ///////////////
+    onFontsLoaded(fonts) {
+        this.split()
+    }
+
+    ///////////////
+    // Methods
+    ///////////////
+    split() {
+        Splitting({ target: this.$el, by: this.splitType })
+    }
 }
