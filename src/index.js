@@ -27,8 +27,12 @@ function init() {
   app.init(app);
 
   globals();
-
-  html.classList.add("is-loaded");
-  html.classList.add("is-ready");
-  html.classList.remove("is-loading");
+  html.classList.add("is-text-animation");
+  setTimeout(() => {
+    html.classList.add("is-first-loaded");
+  }, 300);
+  setTimeout(() => {
+    html.classList.add("is-loaded");
+    html.classList.add("is-ready");
+  }, 1260);
 }

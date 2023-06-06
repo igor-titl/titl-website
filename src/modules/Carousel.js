@@ -8,11 +8,9 @@ export default class extends module {
 
     init() {
         this.swiper = new Swiper(this.el, {
-           speed: 200,
-           loop: true,
-           autoplay: {
-            delay: 2000,
-           },
+           speed: 600,
+           spaceBetween: 0,
+           slidesPerView: 'auto'
         });
     }
 }
