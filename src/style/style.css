@@ -36,19 +36,6 @@
   transform: translateY(0rem);
 }
 
-.o-indent .word:first-child .char {
-  margin-left: 17rem;
-}
-
-.c-cta__fix {
-  transform: translateY(100%);
-  transition: transform 0.6s ease;
-}
-
-.has-scrolled .c-cta__fix {
-  transform: translateY(0%);
-}
-
 [data-transition-delay="1"] {
   transition-delay: 0.1s;
 }
@@ -83,69 +70,24 @@
   opacity: 1;
 }
 
-.c-form__button-shedule-pulse::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #00ff00;
-  opacity: 0.5;
-  z-index: -2;
-  animation: pulse 2s infinite;
-  border-radius: 100%;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(0);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-/* .c-home-hero__bg {
-      background-color: #000;
-      opacity: calc(var(--progress) * 0.55);
-    }  */
-
-.c-form__field-input:-webkit-autofill,
-.c-form__field-input:-webkit-autofill:hover,
-.c-form__field-input:-webkit-autofill:focus {
-  caret-color: #245792;
-  -webkit-text-fill-color: #245792;
-  -webkit-box-shadow: 0 0 0px 1000px var(--input-bg-color) inset;
-}
-
 .swiper-slide.c-cases__slider-slide:last-child {
   margin-right: 0rem;
 }
 
-.u-anim-char .word {
-  display: inline-block;
+.o-tag::before {
+  content: "";
+  position: absolute;
+  inset: -0.5rem;
+}
+
+.c-form__button-submit {
+  color: inherit;
+}
+
+.c-agency-gallery__image {
+  height: calc(100% + 6rem);
+}
+
+.o-head-title {
   visibility: hidden;
-}
-
-/* .is-inview .u-anim-char .word:nth-child(odd) {
-      transition-delay: calc(var(--word-index) * 10ms);
-      visibility: visible;
-    } */
-.is-inview .u-anim-char .word:nth-child(3n) {
-  transition-delay: calc(var(--word-index) * 30ms);
-  visibility: visible;
-}
-.is-inview .u-anim-char .word:nth-child(7n) {
-  transition-delay: calc(var(--word-index) * 40ms);
-  visibility: visible;
-}
-.is-inview .u-anim-char .word:nth-child(9n) {
-  transition-delay: calc(var(--word-index) * 50ms);
-  visibility: visible;
-}
-
-.is-inview .u-anim-char .word {
-  transition-delay: calc(var(--word-index) * 20ms);
-  visibility: visible;
 }
