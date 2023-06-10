@@ -13,7 +13,7 @@ input:-webkit-autofill:focus {
 
 /* ------ >INPUT BG FILL FIX ------ */
 
-/* ------ FOOTET BUTTON ------ */
+/* ------ FORM BUTTON ------ */
 
 .c-form__button-shedule-pulse::before {
   content: "";
@@ -39,4 +39,8 @@ input:-webkit-autofill:focus {
   }
 }
 
-/* ------ >FOOTET BUTTON ------ */
+.c-form__button-submit {
+  color: inherit;
+}
+
+/* ------ >FORM BUTTON ------ */

@@ -1,0 +1,8 @@
+.c-footer__allrights .o-small-text,
+.c-footer__age .o-small-text {
+  visibility: hidden;
+}
+.c-footer__allrights .o-small-text.active,
+.c-footer__age .o-small-text.active {
+  visibility: visible;
+}

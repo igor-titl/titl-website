@@ -1,0 +1,42 @@
+.c-client__wrapper-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #fff;
+  opacity: 0;
+  z-index: -1;
+  transition: opacity 0.5s ease, inset 0.5s ease;
+  border-radius: 100vw;
+}
+.c-client__wrapper-item:hover::before {
+  inset: -0.5rem;
+  opacity: 1;
+}
+
+.swiper-slide.c-cases__slider-slide:last-child {
+  margin-right: 0rem;
+}
+
+/* TAG */
+
+.o-tag::before {
+  content: "";
+  position: absolute;
+  inset: -0.5rem;
+}
+
+/* >TAG */
+
+.c-cases__tags-list.is-inview .o-tag,
+.c-cases__bottom.is-inview .c-cases__slider-slide {
+  transition-delay: calc(var(--item-index) * 100ms);
+  transition-property: transform, opacity;
+  transition-duration: 1.2s;
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: scale(1);
+  opacity: 1;
+}
+
+.c-cases__item-right .fade-in {
+  transition-delay: 0.2s;
+}
