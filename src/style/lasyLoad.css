@@ -1,0 +1,14 @@
+/* ------ lazyload ------ */
+
+.c-agency-gallery__image-mask.c-lazy .c-image_img {
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.c-agency-gallery__image-mask.c-lazy .c-image_img.-lazy-loaded,
+.c-agency-gallery__image-mask.c-lazy .c-image_img.swiper-lazy-loaded {
+  opacity: 1;
+  transition-delay: 0.3s;
+}
+
+/* ------ >lazyload ------ */

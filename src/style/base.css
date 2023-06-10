@@ -1,0 +1,24 @@
+/* ------ Lenis scroll fix ------ */
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+html.lenis {
+  height: auto;
+}
+
+/* ------ >Lenis scroll fix ------ */
+
+body,
+html {
+  min-height: 100%;
+}
+
+body {
+  transition: background-color 0.5s ease;
+}
+
+:root {
+  --input-bg-color: #edf2f9;
+}

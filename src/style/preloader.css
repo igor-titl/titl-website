@@ -1,0 +1,36 @@
+/* ------ preloader ------ */
+
+.is-text-animation .o-loader .c-header__logo,
+.is-text-animation .o-loader .c-header__list-item {
+  visibility: hidden;
+  animation-name: textLogo;
+  animation-timing-function: linear;
+  animation-duration: 0.2s;
+  animation-iteration-count: 3;
+  animation-direction: alternate;
+  animation-delay: calc(var(--item-index) * 50ms);
+}
+
+.o-loader {
+  background-color: var(--input-bg-color);
+  transition: background-color 0.3s ease;
+  visibility: hidden;
+}
+
+.is-first-loaded .o-loader {
+  background-color: transparent;
+}
+
+@keyframes textLogo {
+  0% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+/* ------ >preloader ------ */
