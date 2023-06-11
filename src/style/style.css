@@ -3,25 +3,6 @@
   height: var(--home-hero-height);
 }
 
-.o-tag,
-.c-cases__slider-slide {
-  opacity: 0;
-  transform: scale(0.9);
-}
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(2rem);
-  transition-property: transform, opacity;
-  transition-duration: 0.8s;
-  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-.fade-in.is-inview {
-  opacity: 1;
-  transform: translateY(0rem);
-}
-
 [data-transition-delay="1"] {
   transition-delay: 0.1s;
 }

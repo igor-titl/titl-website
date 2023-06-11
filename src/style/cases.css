@@ -27,9 +27,22 @@
 
 /* >TAG */
 
-.c-cases__tags-list.is-inview .o-tag,
-.c-cases__bottom.is-inview .c-cases__slider-slide {
-  transition-delay: calc(var(--item-index) * 100ms);
+.o-tag,
+.c-cases__slider-slide {
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.is-inview .c-cases__tags-list .o-tag {
+  transition-delay: calc(var(--item-index) * 100ms + 500ms);
+  transition-property: transform, opacity;
+  transition-duration: 1.2s;
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: scale(1);
+  opacity: 1;
+}
+.is-inview .c-cases__slider-slide {
+  transition-delay: 500ms;
   transition-property: transform, opacity;
   transition-duration: 1.2s;
   transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -37,6 +50,16 @@
   opacity: 1;
 }
 
-.c-cases__item-right .fade-in {
-  transition-delay: 0.2s;
+.c-cases__item-right .lines .word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(2rem);
+  transition-property: opacity, transform;
+  transition-duration: 0.8s;
+}
+
+.is-inview .c-cases__item-right .lines .word {
+  transition-delay: calc(var(--line-index) * 100ms);
+  opacity: 1;
+  transform: translateY(0);
 }
