@@ -1,5 +1,5 @@
 import { module } from 'modujs';
-import Swiper from 'swiper';
+import Swiper, { Navigation } from 'swiper';
 
 export default class extends module {
     constructor(m) {
@@ -7,10 +7,16 @@ export default class extends module {
     }
 
     init() {
-        this.swiper = new Swiper(this.el, {
+        const el = this.el
+        this.swiper = new Swiper(el.querySelector(".swiper"), {
+           modules: [Navigation],
            speed: 600,
            spaceBetween: 0,
-           slidesPerView: 'auto'
+           slidesPerView: 'auto',
+           navigation: {
+            nextEl: el.querySelector('.c-cases__slider-btn'),
+           }
+
         });
     }
 }
