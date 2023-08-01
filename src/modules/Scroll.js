@@ -10,11 +10,11 @@ export default class extends module {
     constructor(m) {
         super(m)
 
-        if (history.scrollRestoration) {
-            history.scrollRestoration = 'manual'
+        // if (history.scrollRestoration) {
+        //     history.scrollRestoration = 'manual'
 
-            window.scrollTo(0,0)
-        }
+        //     window.scrollTo(0,0)
+        // }
 
         // Binding
         this.onResizeBind = this.onResize.bind(this)

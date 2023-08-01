@@ -54,7 +54,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  font-size: calc(0.4934210526315789vw + 0.506578947368421em);
 }
 
 a {
