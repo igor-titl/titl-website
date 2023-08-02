@@ -1,0 +1,4 @@
+.c-home-hero {
+  --home-hero-height: calc(min(var(--vh, 1vh) * 100, 80vw));
+  height: var(--home-hero-height);
+}

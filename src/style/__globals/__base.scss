@@ -25,7 +25,7 @@ body {
 
 /* ------ Base style ------ */
 
-.o-hidden {
+.o-visibility-hidden {
   visibility: hidden !important;
 }
 
@@ -48,8 +48,7 @@ body {
   text-shadow: none;
 }
 
-html,
-body {
+html {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-smoothing: antialiased;
@@ -68,7 +67,7 @@ a {
   pointer-events: all;
 }
 
-.visually-hidden {
+.o-visually-hidden {
   position: absolute;
   margin: -1px;
   -webkit-clip-path: inset(50%);

@@ -9,7 +9,7 @@ export default class extends module {
 
     init() {
         this.load = new modularLoad({
-            enterDelay: 300,
+            enterDelay: 330,
             transitions: {
             }
         })

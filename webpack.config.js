@@ -1,3 +1,4 @@
+const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const target = "browserslist";
@@ -7,34 +8,35 @@ const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 module.exports = {
   target,
   mode: "production",
+  entry: path.resolve(__dirname, "src", "index.js"),
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    clean: true,
+    filename: "[name].js",
+  },
   devtool: "source-map",
-  plugins: [new MiniCssExtractPlugin()],
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
+    }),
+  ],
 
   module: {
     rules: [
       {
-        test: /\.css$/i,
+        test: /\.(c|sa|sc)ss$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          {
-            loader: "css-loader",
-            options: { sourceMap: true },
-          },
+          "css-loader",
           {
             loader: "postcss-loader",
             options: {
               postcssOptions: {
-                plugins: [
-                  [
-                    "postcss-preset-env",
-                    {
-                      // Options
-                    },
-                  ],
-                ],
+                plugins: [require("postcss-preset-env")],
               },
             },
           },
+          "sass-loader",
         ],
       },
     ],

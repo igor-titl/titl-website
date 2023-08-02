@@ -2,7 +2,7 @@ import modular from "modujs";
 import * as modules from "./modules";
 import globals from "./globals";
 import { html } from "./utils/environment";
-import "./style.css";
+import "./style.scss";
 
 const app = new modular({
   modules: modules,
@@ -28,12 +28,7 @@ function init() {
   app.init(app);
 
   globals();
-  html.classList.add("is-text-animation");
-  setTimeout(() => {
-    html.classList.add("is-first-loaded");
-  }, 300);
-  setTimeout(() => {
-    html.classList.add("is-loaded");
-    html.classList.add("is-ready");
-  }, 1260);
+  html.classList.add("is-first-loaded");
+  html.classList.add("is-loaded");
+  html.classList.add("is-ready");
 }
