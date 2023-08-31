@@ -1,0 +1,33 @@
+/*width*/
+
+// ::-webkit-scrollbar {
+//   width: 4px;
+//   background-color: #4d4d4d;
+// }
+
+// /*track*/
+
+// ::-webkit-scrollbar-track {
+//   // box-shadow: inset 0 0 5px grey;
+//   // border-radius: 10px;
+// }
+
+// /*thumb*/
+
+// ::-webkit-scrollbar-thumb {
+//   background: greenyellow;
+//   // border-radius: 10px;
+// }
+
+/* ------ HIDDEN SCROLLBAR ------ */
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* ------ >HIDDEN SCROLLBAR ------ */
