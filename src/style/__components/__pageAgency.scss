@@ -2,3 +2,44 @@
   background-color: #fff;
   --input-bg-color: #fff;
 }
+
+// [data-col="1"] {
+//   grid-column: 1;
+// }
+
+// [data-col="2"] {
+//   grid-column: 2;
+// }
+
+// [data-col="3"] {
+//   grid-column: 3;
+// }
+
+// [data-col="4"] {
+//   grid-column: 4;
+// }
+
+// [data-col="5"] {
+//   grid-column: 5;
+// }
+
+// [data-col="6"] {
+//   grid-column: 6;
+// }
+
+// $base-column-nb: 1;
+
+// [data-col="#{$base-column-nb}"] {
+//   grid-column: span #{$base-column-nb};
+// }
+
+@for $i from 1 through 10 {
+  [data-col="#{$i}"] {
+    grid-column: span #{$i};
+  }
+}
+@for $i from 1 through 15 {
+  [data-row="#{$i}"] {
+    grid-row: span #{$i};
+  }
+}
