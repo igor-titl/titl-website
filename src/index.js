@@ -28,7 +28,17 @@ function init() {
   app.init(app);
 
   globals();
-  html.classList.add("is-first-loaded");
-  html.classList.add("is-loaded");
-  html.classList.add("is-ready");
+
+  setTimeout(() => {
+    html.classList.add("is-first-loaded");
+  }, 50);
+
+  setTimeout(() => {
+    html.classList.add("is-loaded");
+    html.classList.add("is-ready");
+    html.classList.remove("is-loading");
+    setTimeout(() => {
+      document.querySelector(".c-preloader").remove();
+    }, 500);
+  }, 2700);
 }

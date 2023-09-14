@@ -1,36 +1,41 @@
 /* ------ preloader ------ */
 
-.is-text-animation .o-loader .c-header__logo,
-.is-text-animation .o-loader .c-header__list-item {
-  visibility: hidden;
+.o-loader .c-header__logo,
+.o-loader .c-header__list-item {
+  opacity: 0;
+  animation-play-state: paused;
   animation-name: textLogo;
-  animation-timing-function: linear;
-  animation-duration: 0.2s;
+  animation-timing-function: steps(1);
+  animation-duration: 1s;
   animation-iteration-count: 3;
   animation-direction: alternate;
+  animation-fill-mode: forwards;
   animation-delay: calc(var(--item-index) * 50ms);
 }
-
-.o-loader {
-  background-color: var(--input-bg-color);
-  transition: background-color 0.3s ease;
-  visibility: hidden;
-  display: block;
+.o-loader .c-header__logo {
+  animation-play-state: running;
 }
 
-.is-first-loaded .o-loader {
-  background-color: transparent;
+.o-loader .c-header__list-item {
+  animation-play-state: running;
+  animation-delay: calc(var(--item-index) * 70ms + 600ms);
 }
 
 @keyframes textLogo {
   0% {
-    visibility: hidden;
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
   }
   50% {
-    visibility: hidden;
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
   }
   100% {
-    visibility: visible;
+    opacity: 1;
   }
 }
 
