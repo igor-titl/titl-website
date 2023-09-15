@@ -1,0 +1,58 @@
+.c-header {
+  pointer-events: none;
+  & a {
+    pointer-events: all;
+  }
+}
+
+html.is-first-loaded {
+  .c-header .c-header__list-item {
+    transition: opacity 0ms linear;
+    transition-delay: calc(var(--item-index) * 50ms);
+  }
+  .c-header .char {
+    transition: opacity 0ms linear;
+    transition-delay: calc(var(--char-index) * 50ms);
+    &:nth-child(5n-1) {
+      transition-delay: calc(var(--char-index) * 80ms);
+    }
+    &:nth-child(5n-2) {
+      transition-delay: calc(var(--char-index) * 40ms);
+    }
+    &:nth-child(5n-3) {
+      transition-delay: calc(var(--char-index) * 20ms);
+    }
+    &:nth-child(5n-4) {
+      transition-delay: calc(var(--char-index) * 10ms);
+    }
+  }
+  .c-header .word {
+    transition: opacity 0ms linear;
+    transition-delay: calc(var(--word-index) * 50ms);
+    &:nth-child(5n-1) {
+      transition-delay: calc(var(--word-index) * 80ms);
+    }
+    &:nth-child(5n-2) {
+      transition-delay: calc(var(--word-index) * 20ms);
+    }
+    &:nth-child(5n-3) {
+      transition-delay: calc(var(--word-index) * 40ms);
+    }
+    &:nth-child(5n-4) {
+      transition-delay: calc(var(--word-index) * 30ms);
+    }
+  }
+}
+
+.o-nav-text:hover ~ .o-nav__decoration,
+.c-header__logo:hover ~ .o-nav__decoration {
+  .c-header__list-item {
+    opacity: 1 !important;
+  }
+  .char {
+    opacity: 1 !important;
+  }
+  .word {
+    opacity: 1 !important;
+  }
+}

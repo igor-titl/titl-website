@@ -28,10 +28,10 @@ function init() {
   app.init(app);
 
   globals();
-
+  html.classList.add("is-loading");
   setTimeout(() => {
     html.classList.add("is-first-loaded");
-  }, 50);
+  }, 4000);
 
   setTimeout(() => {
     html.classList.add("is-loaded");
@@ -40,5 +40,5 @@ function init() {
     setTimeout(() => {
       document.querySelector(".c-preloader").remove();
     }, 500);
-  }, 2700);
+  }, 3000);
 }

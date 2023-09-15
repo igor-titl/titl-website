@@ -1,9 +1,70 @@
 /* ------ preloader ------ */
 
-.o-loader .c-header__logo,
-.o-loader .c-header__list-item {
+.o-loader {
+  pointer-events: none;
+  background-color: transparent;
+}
+
+.c-header .c-header__list-item {
   opacity: 0;
-  animation-play-state: paused;
+
+  // &:nth-child(5n-1) {
+  //   animation-delay: calc(var(--char-index) * 150ms);
+  // }
+  // &:nth-child(5n-2) {
+  //   animation-delay: calc(var(--char-index) * 100ms);
+  // }
+  // &:nth-child(5n-3) {
+  //   animation-delay: calc(var(--char-index) * 200ms);
+  // }
+  // &:nth-child(5n-4) {
+  //   animation-delay: calc(var(--char-index) * 250ms);
+  // }
+}
+
+.c-header__list-item .char {
+  position: relative;
+}
+
+.c-header__list .char::before {
+  content: "";
+  position: absolute;
+  bottom: -0.11em;
+  width: 100%;
+  height: 0.08em;
+  background-color: #245792;
+}
+
+.c-header .char {
+  opacity: 0;
+}
+
+.c-header .char {
+  animation-name: textLogo;
+  animation-timing-function: steps(1);
+  animation-duration: 1s;
+  animation-iteration-count: 3;
+  animation-direction: alternate;
+  animation-fill-mode: forwards;
+  animation-delay: calc(var(--char-index) * 50ms);
+  &:nth-child(5n-1) {
+    animation-delay: calc(var(--char-index) * 150ms);
+  }
+  &:nth-child(5n-2) {
+    animation-delay: calc(var(--char-index) * 100ms);
+  }
+  &:nth-child(5n-3) {
+    animation-delay: calc(var(--char-index) * 200ms);
+  }
+  &:nth-child(5n-4) {
+    animation-delay: calc(var(--char-index) * 250ms);
+  }
+  html.is-first-loaded & {
+    animation-name: none;
+  }
+}
+
+.c-header .c-header__list-item {
   animation-name: textLogo;
   animation-timing-function: steps(1);
   animation-duration: 1s;
@@ -11,31 +72,88 @@
   animation-direction: alternate;
   animation-fill-mode: forwards;
   animation-delay: calc(var(--item-index) * 50ms);
-}
-.o-loader .c-header__logo {
-  animation-play-state: running;
+  html.is-first-loaded & {
+    animation-name: none;
+  }
 }
 
-.o-loader .c-header__list-item {
-  animation-play-state: running;
-  animation-delay: calc(var(--item-index) * 70ms + 600ms);
+// .c-header {
+//   html.is-ready & {
+//     transition: all 20ms ease;
+//     background-color: transparent;
+//   }
+// }
+
+.o-head-title {
+  & .char {
+    opacity: 0;
+    transition: opacity 0ms linear;
+    transition-delay: calc(var(--char-index));
+    &:nth-child(5n-1) {
+      transition-delay: calc(var(--char-index) * 2ms);
+    }
+    &:nth-child(5n-2) {
+      transition-delay: calc(var(--char-index) * 4ms);
+    }
+  }
+  & .word {
+    opacity: 0;
+    transition: opacity 0ms linear;
+    transition-delay: calc(var(--word-index));
+    &:nth-child(5n-1) {
+      transition-delay: calc(var(--word-index) * 2ms);
+    }
+    &:nth-child(5n-2) {
+      transition-delay: calc(var(--word-index) * 4ms);
+    }
+    &:nth-child(5n-3) {
+      transition-delay: calc(var(--word-index) * 6ms);
+    }
+    &:nth-child(5n-4) {
+      transition-delay: calc(var(--word-index) * 8ms);
+    }
+    &:nth-child(5n-5) {
+      transition-delay: calc(var(--word-index) * 10ms);
+    }
+    &:nth-child(5n-6) {
+      transition-delay: calc(var(--word-index) * 12ms);
+    }
+    &:nth-child(5n-7) {
+      transition-delay: calc(var(--word-index) * 15ms);
+    }
+  }
+  html.is-ready & .char {
+    opacity: 1;
+  }
+  html.is-ready & .word {
+    opacity: 1;
+  }
+}
+
+html {
+  &.is-loading {
+    cursor: wait;
+  }
+  &.is-ready {
+    cursor: default;
+  }
 }
 
 @keyframes textLogo {
   0% {
-    opacity: 1;
+    opacity: 0;
   }
   25% {
-    opacity: 0;
+    opacity: 1;
   }
   50% {
-    opacity: 1;
-  }
-  75% {
     opacity: 0;
   }
-  100% {
+  75% {
     opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 

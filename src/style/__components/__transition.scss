@@ -1,0 +1,14 @@
+[data-load-container] {
+  transition: all 400ms ease;
+  opacity: 0;
+  transform: translateY(2rem);
+
+  html.is-ready & {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  &.is-old {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+}
