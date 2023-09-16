@@ -1,5 +1,7 @@
-[data-load-container] {
-  transition: all 400ms ease;
+.o-scroll {
+  transition-property: transform, opacity;
+  transition-timing-function: ease;
+  transition-duration: 400ms;
   opacity: 0;
   transform: translateY(2rem);
 
@@ -7,7 +9,7 @@
     opacity: 1;
     transform: translateY(0);
   }
-  &.is-old {
+  .is-old & {
     opacity: 0;
     transform: translateY(-2rem);
   }

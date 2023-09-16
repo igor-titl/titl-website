@@ -41,7 +41,7 @@
 
 .c-header .char {
   animation-name: textLogo;
-  animation-timing-function: steps(1);
+  animation-timing-function: step-start;
   animation-duration: 1s;
   animation-iteration-count: 3;
   animation-direction: alternate;
@@ -66,7 +66,7 @@
 
 .c-header .c-header__list-item {
   animation-name: textLogo;
-  animation-timing-function: steps(1);
+  animation-timing-function: step-start;
   animation-duration: 1s;
   animation-iteration-count: 3;
   animation-direction: alternate;
@@ -87,7 +87,7 @@
 .o-head-title {
   & .char {
     opacity: 0;
-    transition: opacity 0ms linear;
+    transition: opacity 0ms step-start;
     transition-delay: calc(var(--char-index));
     &:nth-child(5n-1) {
       transition-delay: calc(var(--char-index) * 2ms);
@@ -98,7 +98,7 @@
   }
   & .word {
     opacity: 0;
-    transition: opacity 0ms linear;
+    transition: opacity 0ms step-start;
     transition-delay: calc(var(--word-index));
     &:nth-child(5n-1) {
       transition-delay: calc(var(--word-index) * 2ms);

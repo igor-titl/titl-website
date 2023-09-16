@@ -7,11 +7,11 @@
 
 html.is-first-loaded {
   .c-header .c-header__list-item {
-    transition: opacity 0ms linear;
+    transition: opacity 200ms step-start;
     transition-delay: calc(var(--item-index) * 50ms);
   }
   .c-header .char {
-    transition: opacity 0ms linear;
+    transition: opacity 200ms step-start;
     transition-delay: calc(var(--char-index) * 50ms);
     &:nth-child(5n-1) {
       transition-delay: calc(var(--char-index) * 80ms);
@@ -27,7 +27,7 @@ html.is-first-loaded {
     }
   }
   .c-header .word {
-    transition: opacity 0ms linear;
+    transition: opacity 200ms step-start;
     transition-delay: calc(var(--word-index) * 50ms);
     &:nth-child(5n-1) {
       transition-delay: calc(var(--word-index) * 80ms);

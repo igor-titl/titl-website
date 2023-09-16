@@ -8,9 +8,60 @@
   transition: opacity 0.5s ease, inset 0.5s ease;
   border-radius: 100vw;
 }
-.c-client__wrapper-item:hover::before {
-  inset: -0.5rem;
-  opacity: 1;
+.c-client__wrapper-item {
+  @media (min-width: 991px) {
+    &:hover::before {
+      inset: -0.5rem;
+      opacity: 1;
+    }
+  }
+  @media (max-width: 991px) {
+    &::before {
+      inset: -0.5rem;
+      opacity: 1;
+    }
+  }
+}
+
+.c-client__item-name {
+  @media (min-width: 992px) {
+    grid-template-columns: 0fr;
+    transition: grid-template-columns 600ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+}
+
+.c-client__inner-text {
+  & .word {
+    display: inline-block;
+    transition: opacity 400ms ease, transform 400ms ease;
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+}
+.c-client__wrapper-item {
+  &:hover {
+    .c-client__inner-text {
+      & .word {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: calc(var(--word-index) * 100ms);
+      }
+    }
+  }
+  @media (max-width: 991px) {
+    .c-client__inner-text {
+      & .word {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+.c-client__wrapper-item:hover {
+  .c-client__item-name {
+    grid-template-columns: 1fr;
+  }
 }
 
 .swiper-slide.c-cases__slider-slide:last-child {
@@ -32,23 +83,6 @@
   opacity: 0;
   transform: scale(0.9);
 } */
-
-.is-inview .c-cases__tags-list .o-tag {
-  transition-delay: calc(var(--item-index) * 100ms + 500ms);
-  transition-property: transform, opacity;
-  transition-duration: 1.2s;
-  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-  transform: scale(1);
-  opacity: 1;
-}
-.is-inview .c-cases__slider-slide {
-  transition-delay: 500ms;
-  transition-property: transform, opacity;
-  transition-duration: 1.2s;
-  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
-  transform: scale(1);
-  opacity: 1;
-}
 
 .c-cases__item-right .lines .word {
   display: inline-block;
@@ -103,4 +137,19 @@
 
 .c-cases__slider-btn.swiper-button-disabled .c-cases__slider-btn-ico {
   opacity: 0.6;
+}
+
+.c-cases__bottom {
+  html.is-ready &.is-inview {
+    .swiper-slide.c-cases__slider-slide {
+      transform: translateX(0);
+      opacity: 1;
+      &:nth-child(2) {
+        transition-delay: 100ms;
+      }
+      &:nth-child(3) {
+        transition-delay: 200ms;
+      }
+    }
+  }
 }

@@ -27,6 +27,10 @@ window.onload = (event) => {
 function init() {
   app.init(app);
 
+  const text = " This site was created by nickxsy ";
+  const comment = document.createComment(text);
+  document.insertBefore(comment, document.documentElement);
+
   globals();
   html.classList.add("is-loading");
   setTimeout(() => {

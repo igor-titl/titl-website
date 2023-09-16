@@ -1,8 +1,93 @@
-.c-footer__allrights .o-small-text,
-.c-footer__age .o-small-text {
-  visibility: hidden;
+// .c-footer .o-small-text {
+//   opacity: 1;
+// }
+
+.c-footer .char {
+  position: relative;
 }
-.c-footer__allrights .o-small-text.active,
-.c-footer__age .o-small-text.active {
-  visibility: visible;
-}
+
+// .c-footer .char {
+//   opacity: 0;
+// }
+
+// .c-footer .char {
+//   animation-name: textLogo;
+//   animation-timing-function: step-start;
+//   animation-duration: 3s;
+//   animation-iteration-count: infinite;
+//   animation-play-state: paused;
+//   animation-delay: calc((var(--char-index) + var(--item-index)) * 120ms);
+//   &:nth-child(10n-1) {
+//     animation-delay: calc((var(--char-index) + var(--item-index)) * 250ms);
+//   }
+//   &:nth-child(10n-2) {
+//     animation-delay: calc((var(--char-index) + var(--item-index)) * 50ms);
+//   }
+//   &:nth-child(10n-3) {
+//     animation-delay: calc((var(--char-index) + var(--item-index)) * 150ms);
+//   }
+//   &:nth-child(10n-4) {
+//     animation-delay: calc((var(--char-index) + var(--item-index)) * 100ms);
+//   }
+//   &:nth-child(10n-5) {
+//     animation-delay: calc((var(--char-index) + var(--item-index)) * 200ms);
+//   }
+//   &:nth-child(10n-6) {
+//     animation-delay: calc((var(--char-index) + var(--item-index)) * 170ms);
+//   }
+//   &:nth-child(10n-8) {
+//     animation-delay: calc((var(--char-index) + var(--item-index)) * 250ms);
+//   }
+//   &:nth-child(10n-9) {
+//     animation-delay: calc((var(--char-index) + var(--item-index)) * 200ms);
+//   }
+//   &:nth-child(10n-10) {
+//     animation-delay: calc((var(--char-index) + var(--item-index)) * 150ms);
+//   }
+//   &:nth-child(10n-11) {
+//     animation-delay: calc((var(--char-index) + var(--item-index)) * 50ms);
+//   }
+// }
+
+// .c-footer.is-inview {
+//   .char
+//   // .o-small-text {
+//   {
+//     animation-play-state: running;
+//   }
+// }
+
+// .c-footer .o-small-text {
+//   animation-name: textLogo;
+//   animation-timing-function: step-start;
+//   animation-duration: 7s;
+//   animation-iteration-count: infinite;
+//   animation-play-state: paused;
+
+//   animation-delay: calc(var(--item-index) * 50ms);
+// }
+
+// .c-header {
+//   html.is-ready & {
+//     transition: all 20ms ease;
+//     background-color: transparent;
+//   }
+// }
+
+// @keyframes textLogo {
+//   0% {
+//     opacity: 0;
+//   }
+//   25% {
+//     opacity: 1;
+//   }
+//   50% {
+//     opacity: 0;
+//   }
+//   75% {
+//     opacity: 1;
+//   }
+//   100% {
+//     opacity: 0;
+//   }
+// }
