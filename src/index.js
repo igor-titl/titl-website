@@ -41,8 +41,8 @@ function init() {
     html.classList.add("is-loaded");
     html.classList.add("is-ready");
     html.classList.remove("is-loading");
-    setTimeout(() => {
-      document.querySelector(".c-preloader").remove();
-    }, 500);
+    // setTimeout(() => {
+    //   document.querySelector(".c-preloader").remove();
+    // }, 500);
   }, 3000);
 }

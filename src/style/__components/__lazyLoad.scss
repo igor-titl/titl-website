@@ -10,6 +10,7 @@ html.is-ready {
   .c-agency-gallery__image-mask.c-lazy .c-image_img.-lazy-loaded,
   .c-agency-gallery__image-mask.c-lazy .c-slider-image_img.-lazy-loaded,
   .c-agency-gallery__image-mask.c-lazy .c-image_img.swiper-lazy-loaded {
+    transition-delay: 400ms;
     opacity: 1;
   }
 }
@@ -17,6 +18,7 @@ html.is-ready {
 
 html.is-ready {
   .c-agency-gallery__image-mask.c-lazy.-lazy-loaded .c-agency-gallery__image {
+    transition-delay: 400ms;
     transform: scale(1);
   }
 }

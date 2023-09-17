@@ -276,6 +276,16 @@ export default class extends module {
         })
     }
 
+    initScrollModal() {
+        const scroll = new LocomotiveScroll({
+            el: document.querySelector('.c-modal__inner'),
+            smooth: true,
+            // getDirection: true,
+            // multiplier: 0.5,
+            // lerp: 0.06,
+        });
+    }
+
     /**
      * Lazy load the related image.
      *
