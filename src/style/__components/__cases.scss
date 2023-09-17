@@ -140,7 +140,7 @@
 }
 
 .c-cases__bottom {
-  html.is-ready &.is-inview {
+  .is-finish-load.has-dom-ready &.is-inview {
     .swiper-slide.c-cases__slider-slide {
       transform: translateX(0);
       opacity: 1;
@@ -150,6 +150,16 @@
       &:nth-child(3) {
         transition-delay: 200ms;
       }
+    }
+  }
+}
+
+.c-client__wrapper-item {
+  .is-finish-load.has-dom-ready &.is-inview {
+    transform: translateY(0);
+    opacity: 1;
+    @media (min-width: 992px) {
+      transition-delay: calc(var(--item-index) * 100ms);
     }
   }
 }

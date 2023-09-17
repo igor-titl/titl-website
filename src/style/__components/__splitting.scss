@@ -1,49 +1,56 @@
-.u-anim-char .char {
-  display: inline-block;
-  opacity: 0;
-}
-.u-anim-char .word {
-  display: inline-block;
-}
+// .u-anim-char .char {
+//   display: inline-block;
+//   opacity: 0;
+// }
+// .u-anim-char .word {
+//   display: inline-block;
+// }
 
-html.is-first-loaded {
-  .u-anim-char {
-    .char {
-      transition-property: transform, opacity;
-      transition-duration: 0s;
-      transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+.u-anim-char {
+  & .char {
+    opacity: 0;
+    transition: opacity 0ms step-start;
+    transition-delay: calc(var(--char-index));
+    &:nth-child(5n-1) {
+      transition-delay: calc(var(--char-index) * 2ms);
+    }
+    &:nth-child(5n-2) {
+      transition-delay: calc(var(--char-index) * 4ms);
+    }
+  }
+  & .word {
+    opacity: 0;
+    transition: opacity 0ms step-start;
+    transition-delay: calc(var(--word-index));
+    &:nth-child(5n-1) {
+      transition-delay: calc(var(--word-index) * 2ms);
+    }
+    &:nth-child(5n-2) {
+      transition-delay: calc(var(--word-index) * 4ms);
+    }
+    &:nth-child(5n-3) {
+      transition-delay: calc(var(--word-index) * 6ms);
+    }
+    &:nth-child(5n-4) {
+      transition-delay: calc(var(--word-index) * 8ms);
+    }
+    &:nth-child(5n-5) {
+      transition-delay: calc(var(--word-index) * 10ms);
+    }
+    &:nth-child(5n-6) {
+      transition-delay: calc(var(--word-index) * 12ms);
+    }
+    &:nth-child(5n-7) {
+      transition-delay: calc(var(--word-index) * 15ms);
     }
   }
 }
 
-html.is-first-loaded {
-  .u-anim-char {
-    .char {
-      &:nth-child(6n) {
-        transition-delay: 50ms;
-      }
-      &:nth-child(6n-1) {
-        transition-delay: 150ms;
-      }
-      &:nth-child(6n-2) {
-        transition-delay: 200ms;
-      }
-      &:nth-child(6n-3) {
-        transition-delay: 250ms;
-      }
-      &:nth-child(6n-4) {
-        transition-delay: 300ms;
-      }
-      &:nth-child(6n-5) {
-        transition-delay: 350ms;
-      }
-    }
-  }
-}
-
-html.is-ready {
-  .u-anim-char {
-    .char {
+.u-anim-char[data-scroll].is-inview,
+.u-anim-char:not([data-scroll]) {
+  .is-finish-load.has-dom-ready & {
+    .char,
+    .word {
       opacity: 1;
     }
   }

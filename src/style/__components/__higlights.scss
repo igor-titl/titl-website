@@ -5,7 +5,7 @@
 }
 
 .c-higlights-project__item {
-  html.is-ready &.is-inview {
+  .is-finish-load.is-ready &.is-inview {
     .c-higlights-project__left {
       transform: translateX(0);
       opacity: 1;
@@ -70,7 +70,7 @@
 
 .c-higlights-project__divider {
   transform-origin: left center;
-  html.is-ready &.is-inview {
+  .is-finish-load.has-dom-ready &.is-inview {
     transform: scaleX(1);
   }
 }

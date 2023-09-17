@@ -53,19 +53,22 @@ function init() {
 
   html.classList.remove("is-loading");
 
-  gsap.delayedCall(0.2, () => {
-    html.classList.add("is-first-load");
+  // gsap.delayedCall(0.2, () => {
+  html.classList.add("is-first-load");
 
-    gsap.delayedCall(3.6, () => {
-      html.classList.add("has-dom-ready");
-      html.classList.add("is-finish-load");
-      html.classList.add("is-loaded");
-      html.classList.add("is-ready");
-      html.classList.add("is-loading-callback");
+  gsap.delayedCall(3.6, () => {
+    html.classList.add("is-finish-load");
 
-      gsap.delayedCall(0.4, () => {
-        html.classList.remove("is-loading-callback");
-      });
-    });
+    // html.classList.add("is-loading-callback");
+
+    // gsap.delayedCall(0.4, () => {
+    //   html.classList.remove("is-loading-callback");
+    // });
   });
+  gsap.delayedCall(0.2, () => {
+    html.classList.add("has-dom-ready");
+    html.classList.add("is-loaded");
+    html.classList.add("is-ready");
+  });
+  // });
 }

@@ -80,9 +80,10 @@ export default class extends module {
             html.classList.remove('has-dom-ready');
             html.classList.remove('has-scrolled');
             html.classList.remove('has-nav-open');
-            html.classList.remove('has-filters- stick');
-            html.classList.remove('-hide');
-            html.classList.remove('has-nav-open-callback');
+            
+            // html.classList.remove('has-filters- stick');
+            // html.classList.remove('-hide');
+            // html.classList.remove('has-nav-open-callback');
 
             html.classList.add('is-loading-callback');
 
@@ -92,22 +93,22 @@ export default class extends module {
             this.call('destroy', oldContainer, 'app');
             this.call('update', newContainer, 'app');
 
-            html.setAttribute('data-direction', '');
-            html.setAttribute('data-theme', newContainer.getAttribute('data-theme'));
+            // html.setAttribute('data-direction', '');
+            // html.setAttribute('data-theme', newContainer.getAttribute('data-theme'));
 
-            gsap.delayedCall(0.7, () => {
+            gsap.delayedCall(0.2, () => {
 
                 html.classList.add('has-dom-ready');
 
-                gsap.delayedCall(0.4, () => {
-                    html.classList.remove('is-loading-callback');
-                });
+                // gsap.delayedCall(0.4, () => {
+                //     html.classList.remove('is-loading-callback');
+                // });
             });
         });
 
-        window.addEventListener('modularimages', () => {
-            this.call('update', null, 'Scroll')
-        })
+        // window.addEventListener('modularimages', () => {
+        //     this.call('update', null, 'Scroll')
+        // })
     }
 
     goTo(options) {
