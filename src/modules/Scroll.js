@@ -171,6 +171,8 @@
 // }
 
 
+
+
 import { module } from 'modujs';
 import LocomotiveScroll from 'locomotive-scroll';
 import { lazyLoadImage } from '../utils/image';
@@ -276,16 +278,6 @@ export default class extends module {
         })
     }
 
-    initScrollModal() {
-        const scroll = new LocomotiveScroll({
-            el: document.querySelector('.c-modal__inner'),
-            smooth: true,
-            // getDirection: true,
-            // multiplier: 0.5,
-            // lerp: 0.06,
-        });
-    }
-
     /**
      * Lazy load the related image.
      *
@@ -309,25 +301,25 @@ export default class extends module {
         })
     }
 
-    toggleVideo(args) {
-        let $target
+    // toggleVideo(args) {
+    //     let $target
 
-        if (args.obj.target) {
-            $target = args.obj.target
-        } else if (args.obj.targetEl) {
-            $target = args.obj.targetEl
-        } else {
-            return
-        }
+    //     if (args.obj.target) {
+    //         $target = args.obj.target
+    //     } else if (args.obj.targetEl) {
+    //         $target = args.obj.targetEl
+    //     } else {
+    //         return
+    //     }
 
-        const moduleID = $target.dataset.moduleVideoInview
+    //     const moduleID = $target.dataset.moduleVideoInview
 
-        if (args.way === 'enter') {
-            this.call('onEnter', null, 'VideoInview', moduleID)
-        } else if (args.way === 'exit') {
-            this.call('onLeave', null, 'VideoInview', moduleID)
-        }
-    }
+    //     if (args.way === 'enter') {
+    //         this.call('onEnter', null, 'VideoInview', moduleID)
+    //     } else if (args.way === 'exit') {
+    //         this.call('onLeave', null, 'VideoInview', moduleID)
+    //     }
+    // }
 
     update() {
         this.scroll?.update()

@@ -40,7 +40,7 @@ export default class extends module {
     }
 
     toggle() {
-        this.call('initScrollModal', null, 'Scroll')
+
         // this.call('destroy', null, 'Scroll')
         // this.call('initScrollModal', null, 'Scroll')
         if(html.classList.contains(CLASS.OPEN)) {

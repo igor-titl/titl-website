@@ -5,7 +5,7 @@
   }
 }
 
-html.is-first-loaded {
+html.is-finish-load {
   .c-header .c-header__list-item {
     transition: opacity 200ms step-start;
     transition-delay: calc(var(--item-index) * 50ms);
