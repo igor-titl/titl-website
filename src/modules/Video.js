@@ -38,7 +38,7 @@
       const videoElem = document.querySelectorAll('[data-video="toggler"]')
 
       for(let i = 0; i < video.length; i++) {
-        videoElem[i].muted(true);
+        video[i].muted(true);
           videoElem[i].classList.remove('has-played')
           // this.isPlaying = false;
         }
