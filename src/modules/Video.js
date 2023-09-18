@@ -31,21 +31,19 @@ export default class extends module {
   }
 
   playVideo() {
-    const video = document.querySelectorAll('video')
+    const video = document.querySelectorAll('[data-video="toggler"] video')
     
     const videoElem = document.querySelectorAll('[data-video="toggler"]')
-    
+
+    for(let i = 0; i < video.length; i++) {
+        video[i].pause();
+        videoElem[i].classList.remove('has-played')
+        // this.isPlaying = false;
+      }
     
     this.isPlaying = true;
     this.$el.classList.add("has-played");
     this.$video.play();
-
-    for(let i = 0; i < video.length; i++) {
-      video[i].pause();
-      videoElem[i].classList.remove('has-played')
-      // this.isPlaying = false;
-    }
-    
     this.updateVideo();
   }
 
