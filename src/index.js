@@ -10,9 +10,6 @@ const app = new modular({
 });
 
 window.onload = (event) => {
-  document.querySelector("#app").remove();
-  document.querySelector("#app-style").remove();
-
   const $style = document.getElementById("main-css");
 
   if ($style) {
