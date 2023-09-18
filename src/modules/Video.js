@@ -32,10 +32,11 @@ export default class extends module {
 
   playVideo() {
     const video = document.querySelectorAll('video')
-    const videoClass = document.querySelectorAll('.c-higlights-project__video-wrapper')
+    
+    const videoElem = document.querySelectorAll('[data-video="toggler"]')
     for(let i = 0; i < video.length; i++) {
         video[i].pause();
-        videoClass[i].classList.remove('has-played')
+        videoElem[i].classList.remove('has-played')
         // this.isPlaying = false;
       }
     
