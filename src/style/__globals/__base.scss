@@ -1,5 +1,9 @@
 /* ------ Lenis scroll fix ------ */
 
+:root {
+  --text: red;
+}
+
 .lenis.lenis-smooth {
   scroll-behavior: auto;
 }
@@ -17,6 +21,7 @@ html {
 
 body {
   transition: background-color 0.5s ease;
+  color: var(--text);
 }
 
 :root {
