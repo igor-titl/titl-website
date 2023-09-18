@@ -7,3 +7,4 @@ export { default as Video } from "./modules/Video";
 // export { default as Modal } from "./modules/Modal";
 // export { default as ModalToggler } from "./modules/ModalToggler";
 export { default as ScrollTo } from "./modules/ScrollTo";
+export { default as VideoAutoplay } from "./modules/VideoAutoplay";
