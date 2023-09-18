@@ -24,35 +24,35 @@
       this.updateVideo()
     }
 
-    // toggleVideo() {
-    //   if (this.$el.classList.contains("has-played")) {
-    //     this.pauseVideo();
-    //   } else {
-    //     this.playVideo();
-    //   }
-    // }
+    toggleVideo() {
+      if (this.$el.classList.contains("has-played")) {
+        this.muteVideo();
+      } else {
+        this.unmuteVideo();
+      }
+    }
 
-    // playVideo() {
-    //   const video = document.querySelectorAll('[data-video="toggler"] video')
+    unmuteVideo() {
+      const video = document.querySelectorAll('[data-video="toggler"] video')
       
-    //   const videoElem = document.querySelectorAll('[data-video="toggler"]')
+      const videoElem = document.querySelectorAll('[data-video="toggler"]')
 
-    //   for(let i = 0; i < video.length; i++) {
-    //       video[i].pause();
-    //       videoElem[i].classList.remove('has-played')
-    //       // this.isPlaying = false;
-    //     }
+      for(let i = 0; i < video.length; i++) {
+        videoElem[i].muted(true);
+          videoElem[i].classList.remove('has-played')
+          // this.isPlaying = false;
+        }
       
-    //   this.isPlaying = true;
-    //   this.$el.classList.add("has-played");
-    //   this.$video.play();
-    //   this.updateVideo();
-    // }
+      // this.isPlaying = true;
+      this.$el.classList.add("has-played");
+      this.$video.muted(false);
+      // this.updateVideo();
+    }
 
-    // pauseVideo() {
-    //   this.$el.classList.remove("has-played");
-    //   this.$video.pause();
-    // }
+    muteVideo() {
+      this.$el.classList.remove("has-played");
+      this.$video.muted(true);
+    }
 
     updateVideo() {
       this.$video.addEventListener("timeupdate", () => {
@@ -63,7 +63,7 @@
 
 
         // this.$video.addEventListener("ended", () => {
-        //   // this.pauseVideo();
+        //   // this.muteVideo();
         //   this.$video.currentTime = 0;
         // });
       });
