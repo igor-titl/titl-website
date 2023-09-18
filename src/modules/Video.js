@@ -59,10 +59,12 @@
         const currentTime = this.$video.currentTime,
           duration = this.$video.duration,
           calc = currentTime / duration;
+          this.$el.style = "transition: all 500ms ease"
         this.$el.style.setProperty("--progress", calc);
 
 
         this.$video.addEventListener("ended", () => {
+          this.$el.style = "transition: none"
           this.muteVideo();
         });
       });
