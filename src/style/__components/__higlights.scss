@@ -35,7 +35,8 @@
   }
 }
 
-.c-higlights-project__video-wrapper {
+.c-higlights-project__video-wrapper,
+.c-cases__client-video {
   &:hover {
     .c-higlights-project__video-icon {
       opacity: 1;
