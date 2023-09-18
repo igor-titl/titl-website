@@ -62,10 +62,9 @@
         this.$el.style.setProperty("--progress", calc);
 
 
-        // this.$video.addEventListener("ended", () => {
-        //   // this.muteVideo();
-        //   this.$video.currentTime = 0;
-        // });
+        this.$video.addEventListener("ended", () => {
+          this.muteVideo();
+        });
       });
     }
 
