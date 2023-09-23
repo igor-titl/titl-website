@@ -233,7 +233,7 @@ export default class extends module {
             mobile:{
                 breakpoint:0,
                 smooth: true,
-                multiplier: 15,
+                multiplier: 1,
                 class: "is-reveal",
             },
             tablet:{
