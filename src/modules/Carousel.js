@@ -1,5 +1,8 @@
 import { module } from 'modujs';
 import Swiper, { Navigation } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/navigation';
+
 
 export default class extends module {
     constructor(m) {
