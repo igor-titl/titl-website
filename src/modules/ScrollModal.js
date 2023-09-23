@@ -1,3 +1,4 @@
+
 // import { module } from 'modujs';
 // import { lazyLoadImage } from '../utils/image';
 // import LocomotiveScroll from 'locomotive-scroll';
@@ -198,7 +199,7 @@ export default class extends module {
     }
 
     destroy() {
-        this.scroll.destroy();
+        this.scrollModal.destroy();
         this.unbindEvents()
         super.destroy()
     }
@@ -219,7 +220,7 @@ export default class extends module {
     ///////////////
 
     onResize() {
-        this.scroll?.update();
+        this.scrollModal?.update();
     }
 
     ///////////////
@@ -227,33 +228,22 @@ export default class extends module {
     ///////////////
     initScroll() {
         console.log(this.el)
-        this.scroll = new LocomotiveScroll({
+        this.scrollModal = new LocomotiveScroll({
             el: this.el,
             smooth: this.isSmooth,
-            mobile:{
-                breakpoint:0,
-                smooth: true,
-                multiplier: 15,
-                class: "is-reveal",
-            },
-            tablet:{
-                breakpoint:0,
-                smooth: true,
-                multiplier: 1,
-                class: "is-reveal",
-            },
+
             // scrollbarContainer: this.el.parentNode,
             // getDirection: true,
             // multiplier: 0.5,
             // lerp: 0.06,
         });
 
-        this.scroll.on('call', (func, way, obj, id) => {
+        this.scrollModal.on('call', (func, way, obj, id) => {
             // Using modularJS
             this.call(func[0], { way, obj }, func[1], func[2]);
         });
 
-        this.scroll.on('scroll', (args) => {
+        this.scrollModal.on('scroll', (args) => {
             window.scrollDirection = args.direction
 
             if(args.scroll.y > 200 && !html.classList.contains('has-scrolled')) {
@@ -327,22 +317,22 @@ export default class extends module {
     // }
 
     update() {
-        this.scroll?.update()
+        this.scrollModal?.update()
     }
 
     scrollToTop() {
-        this.scroll?.scrollTo(0)
+        this.scrollModal?.scrollTo(0)
     }
 
     scrollTo(params) {
-        this.scroll?.scrollTo?.(params.target, params.options);
+        this.scrollModal?.scrollTo?.(params.target, params.options);
     }   
 
     stop() {
-        this.scroll?.stop();
+        this.scrollModal?.stop();
     }
 
     start() {
-        this.scroll?.start();
+        this.scrollModal?.start();
     }
 }

@@ -123,4 +123,13 @@ input:-webkit-autofill:focus {
       transition-delay: 800ms;
     }
   }
+
+  &__field {
+    &.active {
+      .c-form__enter {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
 }

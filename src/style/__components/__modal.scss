@@ -1,0 +1,10 @@
+.c-modal {
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 600ms ease;
+  html.has-modal-open & {
+    /* transform: translate3d(0%, 0%, 0px); */
+    visibility: visible;
+    pointer-events: auto;
+  }
+}

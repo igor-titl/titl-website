@@ -16,23 +16,25 @@ export default class extends module {
     }
 
     init(){
-        this.closeBind = (e) => {
-             if (e.key === "Escape") {
-                this.close();
-            }
-        }
+        // this.closeBind = (e) => {
+        //      if (e.key === "Escape") {
+        //         html.classList.remove(CLASS.OPEN)
+        //         this.close();
+              
+        //     }
+        // }
 
-        document.addEventListener('keyup', this.closeBind)
+        // document.addEventListener('keyup', this.closeBind)
     }
 
     open() {
         html.classList.add(CLASS.OPEN)
-        // this.call('destroy', null, 'Scroll')
-        // this.call('initScrollModal', null, 'Scroll')
     }
 
     close() {
         html.classList.remove(CLASS.OPEN)
+
+
     }
 
     goToPrevious() {
@@ -40,9 +42,6 @@ export default class extends module {
     }
 
     toggle() {
-
-        // this.call('destroy', null, 'Scroll')
-        // this.call('initScrollModal', null, 'Scroll')
         if(html.classList.contains(CLASS.OPEN)) {
             this.close();
         } else {

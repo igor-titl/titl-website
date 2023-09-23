@@ -12,8 +12,8 @@ const app = new modular({
 window.onload = (event) => {
   const $style = document.getElementById("main-css");
 
-  document.querySelector("#css").remove();
-  document.querySelector("#app").remove();
+  // document.querySelector("#css").remove();
+  // document.querySelector("#app").remove();
 
   if ($style) {
     if ($style.isLoaded) {

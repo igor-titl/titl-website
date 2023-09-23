@@ -3,6 +3,19 @@
   --input-bg-color: #fff;
 }
 
+[data-load-container="agency"] {
+  opacity: 0;
+  transition: opacity 800ms ease;
+  .c-modal__inner.is-ready & {
+    opacity: 1;
+    transition: opacity 800ms ease;
+  }
+  .c-modal__inner.is-loading & {
+    opacity: 0;
+    transition: opacity 400ms ease;
+  }
+}
+
 // [data-col="1"] {
 //   grid-column: 1;
 // }
