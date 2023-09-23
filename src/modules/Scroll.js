@@ -234,10 +234,12 @@ export default class extends module {
                 breakpoint:0,
                 smooth: true,
                 multiplier: 125,
+                touchMultiplier: 3,
                 class: "is-reveal",
             },
             tablet:{
                 breakpoint:0,
+                touchMultiplier: 3,
                 smooth: true,
                 multiplier: 125,
                 class: "is-reveal",
