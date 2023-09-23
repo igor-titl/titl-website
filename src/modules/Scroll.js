@@ -233,13 +233,13 @@ export default class extends module {
             mobile:{
                 breakpoint:0,
                 smooth: true,
-                multiplier: 1,
+                multiplier: 0.1,
                 class: "is-reveal",
             },
             tablet:{
                 breakpoint:0,
                 smooth: true,
-                multiplier: 1,
+                multiplier: 0.1,
                 class: "is-reveal",
             },
             // scrollbarContainer: this.el.parentNode,
