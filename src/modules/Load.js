@@ -96,7 +96,9 @@ export default class extends module {
             this.call('destroy', oldContainer, 'app');
             this.call('update', newContainer, 'app');
 
+                this.call('update', null, 'Scroll');
             
+
             // gsap.delayedCall(0.6, () => {
             //     console.log('scroll')
         // });
@@ -106,21 +108,22 @@ export default class extends module {
         this.load.on('loading', (transition, oldContainer) => {
             this.call('close', null, 'Menu');
 
+            this.call('update', null, 'Scroll');
 
             
             if(transition == 'agency') {
-                this.call('toggle', null, 'Modal');
+                this.call('open', null, 'ModalAgency');
             }
             
             if(transition == 'higlights') {
-                this.call('toggle', null, 'Modal');
+                this.call('open', null, 'ModalHiglights');
             }
         });
     }
 
 
-    goTo(obj) {
-        this.load.goTo(obj.url, obj.transition);
-    }
+    // goTo(obj) {
+    //     this.load.goTo(obj.url, obj.transition);
+    // }
 }
  

@@ -4,11 +4,11 @@ html {
   // }
 
   @media (min-width: 768px) {
-    font-size: clamp(6px, 1vw, 16px);
+    font-size: clamp(6px, 0.8vw, 16px);
   }
-  @media (min-width: 2000px) {
-    font-size: 18px;
-  }
+  // @media (min-width: 2000px) {
+  //   font-size: 18px;
+  // }
 
   @media (max-width: 375px) {
     font-size: 4.265vw;

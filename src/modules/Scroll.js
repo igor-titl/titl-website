@@ -244,7 +244,7 @@ export default class extends module {
                 multiplier: 1,
                 class: "is-reveal",
             },
-            // scrollbarContainer: this.el.parentNode,
+            scrollbarContainer: this.el.parentNode.parentNode.parentNode,
             // getDirection: true,
             // multiplier: 0.5,
             // lerp: 0.06,

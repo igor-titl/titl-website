@@ -1,28 +1,26 @@
-import { module } from 'modujs';
-import { html } from '../utils/environment'
+// import { module } from 'modujs';
+// import { html } from '../utils/environment'
 
+// export default class extends module {
+//     constructor(m) {
+//         super(m);
+//             this.$el = this.el
+//         this.events = {
+//             click: {
+//                 open: 'openModal'
+//             }
+//         }
+//     }
 
-export default class extends module {
-    constructor(m) {
-        super(m);
-            this.$el = this.el
-        this.events = {
-            click: {
-                open: 'openModal'
-            }
-        }
-    }
+//     init(){
 
-    init(){
+//     }
 
-    }
+//     // openModal(e) {
 
-    // openModal(e) {
-        
-    //     e.preventDefault() 
-    //     console.log("click")
+//     //     e.preventDefault()
+//     //     console.log("click")
 
-
-    //     // this.call('open', null, 'Modal')
-    // }
-}
+//     //     // this.call('open', null, 'Modal')
+//     // }
+// }
