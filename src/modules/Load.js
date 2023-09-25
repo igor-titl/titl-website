@@ -71,7 +71,8 @@
 
 import { module } from 'modujs';
 import modularLoad from 'modularload';
-import gsap from 'gsap';
+// import gsap from 'gsap';
+import { html } from '../utils/environment';
 
 
 export default class extends module {
@@ -110,6 +111,7 @@ export default class extends module {
 
             this.call('update', null, 'Scroll');
 
+            html.classList.remove('has-menu-open');
             
             if(transition == 'agency') {
                 this.call('open', null, 'ModalAgency');

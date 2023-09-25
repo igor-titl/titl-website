@@ -1,0 +1,39 @@
+.c-menu {
+  visibility: hidden;
+  transition: 0.5s;
+  &__bg {
+    opacity: 0;
+    transition: opacity 0.5s $ease-power2-out;
+    .has-menu-open & {
+      opacity: 1;
+    }
+  }
+
+  .has-menu-open & {
+    visibility: visible;
+  }
+}
+
+.c-menu {
+  &__bottom {
+    transform: translateY(100%);
+    border-radius: 3rem;
+    transition: transform 0.5s $ease-power4-in-out,
+      border-radius 0.5s $ease-power4-in-out;
+    .has-menu-open & {
+      transform: translateY(0);
+      border-radius: 2rem;
+    }
+  }
+  &__nav {
+    transform: translateX(100%);
+    border-radius: 3rem;
+    transition: transform 0.5s $ease-power4-in-out,
+      border-radius 0.5s $ease-power4-in-out;
+    .has-menu-open & {
+      transition-delay: 200ms;
+      border-radius: 2rem;
+      transform: translateX(0);
+    }
+  }
+}

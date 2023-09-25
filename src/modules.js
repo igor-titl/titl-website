@@ -12,4 +12,6 @@ export { default as VideoAutoplay } from "./modules/VideoAutoplay";
 export { default as Field } from "./modules/Field";
 export { default as ModalClose } from "./modules/ModalClose";
 export { default as Modal } from "./modules/Modal";
+export { default as Menu } from "./modules/Menu";
+export { default as MenuButton } from "./modules/MenuButton";
 // export { default as ScrollModal } from "./modules/ScrollModal";
