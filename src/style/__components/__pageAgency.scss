@@ -32,26 +32,22 @@
 // [data-col="#{$base-column-nb}"] {
 //   grid-column: span #{$base-column-nb};
 // }
-
-@for $i from 1 through 10 {
-  [data-col="#{$i}"] {
-    grid-column: span #{$i};
-  }
-}
-@for $i from 1 through 15 {
-  [data-row="#{$i}"] {
-    grid-row: span #{$i};
-  }
-}
-@media (max-width: 767px) {
-  @for $i from 1 through 4 {
+@media (min-width: 768px) {
+  @for $i from 1 through 10 {
     [data-col="#{$i}"] {
       grid-column: span #{$i};
     }
   }
-  @for $i from 1 through 4 {
+  @for $i from 1 through 15 {
     [data-row="#{$i}"] {
       grid-row: span #{$i};
+    }
+  }
+}
+@media (max-width: 767px) {
+  @for $i from 1 through 4 {
+    [data-col-mob="#{$i}"] {
+      grid-column: span #{$i};
     }
   }
 }
