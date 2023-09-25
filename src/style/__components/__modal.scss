@@ -15,6 +15,9 @@
   }
   .c-scrollbar {
     height: calc(100% - 8.75rem);
+    @media (max-width: 767px) {
+      padding-bottom: calc(100% - 1.5rem);
+    }
   }
   .c-footer {
     padding-bottom: 8.75rem;
