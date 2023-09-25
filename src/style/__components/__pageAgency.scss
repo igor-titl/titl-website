@@ -43,3 +43,15 @@
     grid-row: span #{$i};
   }
 }
+@media (max-width: 767px) {
+  @for $i from 1 through 4 {
+    [data-col="#{$i}"] {
+      grid-column: span #{$i};
+    }
+  }
+  @for $i from 1 through 4 {
+    [data-row="#{$i}"] {
+      grid-row: span #{$i};
+    }
+  }
+}
