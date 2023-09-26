@@ -7,6 +7,7 @@ const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
   target,
+  devtool: "inline-source-map",
   mode: "production",
   entry: path.resolve(__dirname, "src", "index.js"),
   output: {
@@ -14,7 +15,6 @@ module.exports = {
     clean: true,
     filename: "[name].js",
   },
-  devtool: "source-map",
   plugins: [
     new MiniCssExtractPlugin({
       filename: "[name].css",
@@ -27,16 +27,27 @@ module.exports = {
         test: /\.(c|sa|sc)ss$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          "css-loader",
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true, // Включение source map для CSS
+            },
+          },
           {
             loader: "postcss-loader",
             options: {
               postcssOptions: {
                 plugins: [require("postcss-preset-env")],
               },
+              sourceMap: true, // Включение source map для postcss
             },
           },
-          "sass-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true, // Включение source map для SASS
+            },
+          },
         ],
       },
     ],
