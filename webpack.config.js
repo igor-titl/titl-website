@@ -53,7 +53,7 @@ const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
   target,
-  // mode: "development",
+  mode: "development",
   entry: {
     main: path.resolve(__dirname, "src", "index.js"),
     gsap: path.resolve(__dirname, "src", "gsap.js"),
@@ -63,7 +63,7 @@ module.exports = {
     clean: false,
     filename: "[name].js",
   },
-  devtool: false,
+  devtool: "source-map",
   plugins: [
     new MiniCssExtractPlugin({
       filename: "[name].css",
@@ -71,11 +71,11 @@ module.exports = {
   ],
 
   optimization: {
-    // minimizer: [
-    //   new OptimizeCssAssetsPlugin(),
-    //   new CssMinimizerPlugin(),
-    //   // new TerserWebpackPlugin(),
-    // ],
+    minimizer: [
+      new OptimizeCssAssetsPlugin(),
+      new CssMinimizerPlugin(),
+      // new TerserWebpackPlugin(),
+    ],
     splitChunks: {
       cacheGroups: {
         gsap: {
