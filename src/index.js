@@ -3,7 +3,6 @@ import * as modules from "./modules";
 import globals from "./globals";
 import { html } from "./utils/environment";
 import "./style.scss";
-import gsap from "gsap";
 
 const app = new modular({
   modules: modules,
