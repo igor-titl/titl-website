@@ -40,13 +40,19 @@
 
 .c-modal__inner {
   // transform: translateY(100%);
-  clip-path: inset(100% 0 0 0 round 1rem 1rem 0 0);
+  clip-path: inset(100% 0 0 0 round 1.5rem 1.5rem 0 0);
+  @media (max-width: 767px) {
+    clip-path: inset(100% 0 0 0 round 1rem 1rem 0 0);
+  }
   transition: clip-path 600ms $ease-power4-in-out;
   .has-modal-open-agency &,
   .has-modal-open-higlights & {
-    clip-path: inset(0 0 0 0 round 1rem 1rem 0 0);
-    // transform: translateY(0);
+    clip-path: inset(0 0 0 0 round 1.5rem 1.5rem 0 0);
+    @media (max-width: 767px) {
+      clip-path: inset(0 0 0 0 round 1rem 1rem 0 0);
+    }
   }
+  // transform: translateY(0);
 }
 
 .c-modal__bg {
