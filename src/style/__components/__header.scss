@@ -59,7 +59,7 @@
 }
 
 .c-header {
-  .has-scrolled {
+  .has-scrolled & {
     color: #fff;
     mix-blend-mode: difference;
   }
