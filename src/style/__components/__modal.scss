@@ -40,11 +40,11 @@
 
 .c-modal__inner {
   // transform: translateY(100%);
-  clip-path: inset(100% 0 0 0);
+  clip-path: inset(100% 0 0 0 round 1rem 0 1rem 0);
   transition: clip-path 600ms $ease-power4-in-out;
   .has-modal-open-agency &,
   .has-modal-open-higlights & {
-    clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0 round 1rem 0 1rem 0);
     // transform: translateY(0);
   }
 }
