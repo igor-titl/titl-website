@@ -1,0 +1,17 @@
+.c-aterian__card-1__inner-item {
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path 800ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  &:nth-child(1) {
+    transition-delay: 200ms;
+  }
+  &:nth-child(2) {
+    transition-delay: 300ms;
+  }
+  &:nth-child(3) {
+    transition-delay: 400ms;
+  }
+
+  html.is-ready.has-dom-ready.is-finish-load .c-cases__bottom.is-inview & {
+    clip-path: inset(0 0 0 0);
+  }
+}
