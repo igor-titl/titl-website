@@ -139,20 +139,20 @@
   opacity: 0.6;
 }
 
-.c-cases__bottom {
-  .is-finish-load.has-dom-ready &.is-inview {
-    .swiper-slide.c-cases__slider-slide {
-      transform: translateX(0);
-      opacity: 1;
-      &:nth-child(2) {
-        transition-delay: 100ms;
-      }
-      &:nth-child(3) {
-        transition-delay: 200ms;
-      }
-    }
-  }
-}
+// .c-cases__bottom {
+//   .is-finish-load.has-dom-ready &.is-inview {
+//     .swiper-slide.c-cases__slider-slide {
+//       transform: translateX(0);
+//       opacity: 1;
+//       &:nth-child(2) {
+//         transition-delay: 100ms;
+//       }
+//       &:nth-child(3) {
+//         transition-delay: 200ms;
+//       }
+//     }
+//   }
+// }
 
 .c-client__wrapper-item {
   .is-finish-load.has-dom-ready &.is-inview {

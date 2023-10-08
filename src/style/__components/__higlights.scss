@@ -63,6 +63,7 @@
 }
 
 [data-video="bar"] {
+  transition: stroke-dashoffset 500ms linear;
   --lenght: 1057.5751316061705px;
   stroke-dashoffset: calc(
     (var(--lenght) - (var(--lenght) * var(--progress, 0)))

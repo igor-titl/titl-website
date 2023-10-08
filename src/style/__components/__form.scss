@@ -133,3 +133,35 @@ input:-webkit-autofill:focus {
     }
   }
 }
+
+.c-form__field-input {
+  appearance: none;
+}
+
+.c-form__field-caret {
+  &::before {
+    content: "";
+    position: absolute;
+    margin: auto 0;
+    width: 1rem;
+    height: 70%;
+    right: -1rem;
+    top: 0;
+    bottom: 0;
+    background-color: #245792;
+    opacity: 0;
+  }
+  .c-form__field-input:focus ~ &::before {
+    animation: pulseAttention 600ms steps(1) infinite;
+  }
+}
+
+.c-form__field-input:not([value=""]) ~ .c-form__field-label {
+  opacity: 0;
+}
+
+@keyframes pulseAttention {
+  50% {
+    opacity: 1;
+  }
+}

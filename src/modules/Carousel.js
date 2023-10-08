@@ -1,7 +1,5 @@
 import { module } from 'modujs';
-import Swiper, { Navigation } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
+import {Swiper,  Navigation } from 'swiper';
 
 
 export default class extends module {
@@ -15,6 +13,7 @@ export default class extends module {
            modules: [Navigation],
            speed: 600,
            spaceBetween: 0,
+           slideClass: "w-embed",
            slidesPerView: 'auto',
            navigation: {
             nextEl: el.querySelector('.c-cases__slider-btn'),
