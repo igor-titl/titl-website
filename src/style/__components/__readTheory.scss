@@ -1,0 +1,55 @@
+.c-readtheory__card-3-line {
+  path:nth-child(1) {
+    opacity: 0;
+    transition: opacity 800ms ease;
+    html.is-ready.has-dom-ready.is-finish-load .c-cases__bottom.is-inview & {
+      transition-delay: 200ms;
+      opacity: 1;
+    }
+  }
+  path:nth-child(2) {
+    stroke-dashoffset: 155.31411743164062px;
+    stroke-dasharray: 155.31411743164062px;
+    -webkit-transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715)
+        0.12s,
+      fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s;
+    transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s,
+      fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s;
+    html.is-ready.has-dom-ready.is-finish-load .c-cases__bottom.is-inview & {
+      stroke-dashoffset: 0;
+    }
+  }
+}
+
+.c-readtheory__card-3-figure {
+  path:nth-child(1) {
+    transform: translateY(100%);
+    opacity: 0;
+    transition: opacity 600ms ease, transform 1600ms $ease-power4-in-out;
+    html.is-ready.has-dom-ready.is-finish-load .c-cases__bottom.is-inview & {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 100ms;
+    }
+  }
+  path:nth-child(2) {
+    transform: translateY(100%);
+    opacity: 0;
+    transition: opacity 600ms ease, transform 1600ms $ease-power4-in-out;
+    html.is-ready.has-dom-ready.is-finish-load .c-cases__bottom.is-inview & {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 300ms;
+    }
+  }
+  path:nth-child(3) {
+    transform: translateY(100%);
+    opacity: 0;
+    transition: opacity 600ms ease, transform 1600ms $ease-power4-in-out;
+    html.is-ready.has-dom-ready.is-finish-load .c-cases__bottom.is-inview & {
+      opacity: 1;
+      transform: translateY(0);
+      transition-delay: 200ms;
+    }
+  }
+}

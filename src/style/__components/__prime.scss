@@ -1,0 +1,22 @@
+.c-prime__card-2-figure {
+  path:nth-child(2) {
+    stroke-dashoffset: 323.35272216796875px;
+    stroke-dasharray: 323.35272216796875px;
+    -webkit-transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715)
+        0.12s,
+      fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s;
+    transition: stroke-dashoffset 1s cubic-bezier(0.47, 0, 0.745, 0.715) 0.12s,
+      fill 0.7s cubic-bezier(0.47, 0, 0.745, 0.715) 0.9s;
+    html.is-ready.has-dom-ready.is-finish-load .c-cases__bottom.is-inview & {
+      stroke-dashoffset: 0;
+    }
+  }
+  path:nth-child(1) {
+    opacity: 0;
+    transition: opacity 600ms ease;
+    html.is-ready.has-dom-ready.is-finish-load .c-cases__bottom.is-inview & {
+      opacity: 0.3;
+      transition-delay: 800ms;
+    }
+  }
+}
