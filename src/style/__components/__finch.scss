@@ -1,0 +1,44 @@
+.c-finch-svg {
+  transition: stroke-dashoffset 1200ms $ease-power4-in-out;
+
+  &.is-1 {
+    stroke-dashoffset: 744.5556030273438px;
+    stroke-dasharray: 744.5556030273438px;
+  }
+  &.is-2 {
+    stroke-dashoffset: 259.257080078125px;
+    stroke-dasharray: 259.257080078125px;
+  }
+  &.is-3 {
+    stroke-dashoffset: 134.4101104736328px;
+    stroke-dasharray: 134.4101104736328px;
+  }
+  &.is-4 {
+    stroke-dashoffset: 299.1101989746094px;
+    stroke-dasharray: 299.1101989746094px;
+  }
+  &.is-5 {
+    stroke-dashoffset: 299.1101989746094px;
+    stroke-dasharray: 299.1101989746094px;
+  }
+  &.is-6 {
+    stroke-dashoffset: 299.1101989746094px;
+    stroke-dasharray: 299.1101989746094px;
+  }
+  html.is-ready.has-dom-ready.is-finish-load .c-cases__bottom.is-inview & {
+    stroke-dashoffset: 0;
+  }
+}
+
+.c-finch-ellipse {
+  r: 0;
+  transition: r 400ms $ease-bounce;
+  html.is-ready.has-dom-ready.is-finish-load .c-cases__bottom.is-inview &.is-1 {
+    transition-delay: 800ms;
+    r: 15;
+  }
+  html.is-ready.has-dom-ready.is-finish-load .c-cases__bottom.is-inview &.is-2 {
+    transition-delay: 700ms;
+    r: 10;
+  }
+}

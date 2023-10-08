@@ -163,3 +163,12 @@
     }
   }
 }
+
+.c-cases__slider {
+  & .w-embed:not(:last-child) {
+    margin-right: 1.25rem;
+    @media (max-width: 767px) {
+      margin-right: 0.625rem;
+    }
+  }
+}
