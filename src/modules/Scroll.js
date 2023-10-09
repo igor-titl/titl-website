@@ -226,7 +226,7 @@ export default class extends module {
     // Methods
     ///////////////
     initScroll() {
-        console.log(this.el)
+        // console.log(this.el)
         this.scroll = new LocomotiveScroll({
             el: this.el,
             smooth: this.isSmooth,
