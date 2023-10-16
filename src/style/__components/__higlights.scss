@@ -80,6 +80,10 @@
 
 .c-higlights-project__left:hover {
   .c-higlights-project__left-container {
-    transform: rotateY(180deg);
+    transform: rotateY(-180deg);
   }
+}
+
+.c-higlights-project__left-container {
+  transform-style: preserve-3d;
 }
