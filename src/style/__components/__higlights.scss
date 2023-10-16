@@ -80,7 +80,9 @@
 
 .c-higlights-project__left:hover {
   .c-higlights-project__left-container {
-    transform: rotateY(-180deg);
+    @media (max-width: 767px) {
+      transform: rotateY(-180deg);
+    }
   }
 }
 
