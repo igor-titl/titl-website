@@ -78,9 +78,9 @@
   }
 }
 
-.c-higlights-project__left:hover {
-  .c-higlights-project__left-container {
-    @media (max-width: 767px) {
+@media (max-width: 767px) {
+  .c-higlights-project__left:hover {
+    .c-higlights-project__left-container {
       transform: rotateY(-180deg);
     }
   }
