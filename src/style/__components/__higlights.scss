@@ -77,3 +77,9 @@
     transform: scaleX(1);
   }
 }
+
+.c-higlights-project__left:hover {
+  .c-higlights-project__left-container {
+    transform: rotate(180deg);
+  }
+}
