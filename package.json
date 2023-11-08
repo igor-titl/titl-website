@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/nickozy/TITL#readme",
   "dependencies": {
+    "@vimeo/player": "^2.20.1",
     "browserslist": "^4.21.7",
     "gsap": "^3.11.5",
     "locomotive-scroll": "^4.1.4",

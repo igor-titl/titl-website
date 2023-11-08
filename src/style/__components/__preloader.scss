@@ -82,7 +82,8 @@
 }
 
 .is-finish-load {
-  a .char {
+  a .char,
+  .c-header__menu-button .char {
     animation-name: headerLoad !important;
   }
 }
