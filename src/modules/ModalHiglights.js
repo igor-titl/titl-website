@@ -17,12 +17,12 @@ export default class extends module {
 
 
     open() {
-        html.classList.add(CLASS.OPEN)
+        // html.classList.add(CLASS.OPEN)
     }
 
     close() {
         html.classList.remove(CLASS.OPEN)
-        // history.back()
+        history.back()
     }
 
 

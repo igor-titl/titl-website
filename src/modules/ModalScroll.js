@@ -197,11 +197,7 @@ export default class extends module {
         this.bindEvents()
     }
 
-    destroy() {
-        this.scroll.destroy();
-        this.unbindEvents()
-        super.destroy()
-    }
+  
 
     ///////////////
     // Events
@@ -349,7 +345,8 @@ export default class extends module {
     }
 
     destroy() {
+        this.scroll.destroy();
+        this.unbindEvents()
         super.destroy()
-        this.scroll?.destroy();
     }
 }

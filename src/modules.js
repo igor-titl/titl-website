@@ -1,12 +1,13 @@
 export { default as Split } from "./modules/Split";
 export { default as Load } from "./modules/Load";
 export { default as Scroll } from "./modules/Scroll";
+export { default as ModalScroll } from "./modules/ModalScroll";
 export { default as Nav } from "./modules/Nav";
 export { default as Carousel } from "./modules/Carousel";
 export { default as Video } from "./modules/Video";
-export { default as ModalAgency } from "./modules/ModalAgency";
-export { default as ModalHiglights } from "./modules/ModalHiglights";
-// export { default as ModalToggler } from "./modules/ModalToggler";
+// export { default as ModalAgency } from "./modules/ModalAgency";
+// export { default as ModalHiglights } from "./modules/ModalHiglights";
+export { default as ModalToggler } from "./modules/ModalToggler";
 export { default as ScrollTo } from "./modules/ScrollTo";
 export { default as VideoAutoplay } from "./modules/VideoAutoplay";
 export { default as Field } from "./modules/Field";

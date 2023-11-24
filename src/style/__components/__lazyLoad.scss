@@ -15,10 +15,3 @@
   }
 }
 /* ------ >lazyload ------ */
-
-.is-finish-load.has-dom-ready {
-  .c-agency-gallery__image-mask.c-lazy.-lazy-loaded .c-agency-gallery__image {
-    transition-delay: 400ms;
-    transform: scale(1);
-  }
-}

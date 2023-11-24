@@ -17,7 +17,9 @@ export default class extends module {
     }
 
     closeModal() {
-        this.call('close', null, 'Modal')
+        this.call('goToPrevious', null, 'Modal')
+        // this.call('goToPrevious', null, 'Modal')
+
         
         // this.call('goToPrevious', null, 'Modal')
     }

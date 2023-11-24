@@ -113,13 +113,13 @@ export default class extends module {
 
             html.classList.remove('has-menu-open');
             
-            if(transition == 'agency') {
-                this.call('open', null, 'ModalAgency');
-            }
+            // if(transition == 'agency') {
+            //     this.call('toggle', null, 'Modal');
+            // }
             
-            if(transition == 'higlights') {
-                this.call('open', null, 'ModalHiglights');
-            }
+            // if(transition == 'higlights') {
+            //     this.call('toggle', null, 'Modal');
+            // }
         });
     }
 
