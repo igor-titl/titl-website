@@ -38,18 +38,29 @@ export default class extends module {
     }
 
     goToPrevious() {
-        html.classList.remove(CLASS.OPEN)
-        
+        this.el.querySelector('.c-modal__inner-wrapper').classList.remove('is-loaded')
+        this.el.querySelector('.c-modal__inner-wrapper').classList.remove('is-ready')
+        html.classList.remove(CLASS.OPEN);
+        history.pushState(null, "", "/");
+        document.querySelector('title').innerText = 'TITL';
+
+        this.call('update', null, 'Scroll')
+
 
         this.el.querySelectorAll('.c-layout').forEach((el) => {
             setTimeout(() => {
-
+               
             this.call('destroy', null, "ModalScroll")
                 el.remove()    
+             
+
 
             }, 800)
 
         })
+
+       
+       
     }
 
 

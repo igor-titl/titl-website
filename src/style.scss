@@ -3,8 +3,6 @@
 /////////////////// */
 
 @import "style/__globals/__base";
-// @import "style/__globals/__easing";
-@import "style/__globals/__media";
 
 /* ////////////////////
 ////// SECTION /////// 
@@ -28,14 +26,12 @@
 //////////////////////// */
 
 @import "style/__components/__cases";
+@import "style/__components/_client";
 @import "style/__components/__footer";
 @import "style/__components/__form";
-@import "style/__components/__lazyLoad";
 @import "style/__components/__pageAgency";
 @import "style/__components/__preloader";
 @import "style/__components/__splitting";
-@import "style/__components/__style";
-@import "style/__components/__nav";
 @import "style/__components/__header";
 @import "style/__components/__transition";
 @import "style/__components/__higlights";

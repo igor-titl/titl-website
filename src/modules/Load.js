@@ -71,7 +71,6 @@
 
 import { module } from 'modujs';
 import modularLoad from 'modularload';
-// import gsap from 'gsap';
 import { html } from '../utils/environment';
 
 
@@ -82,13 +81,13 @@ export default class extends module {
 
     init() {
         this.load = new modularLoad({
-            enterDelay: 600,
+            enterDelay: 0,
             transitions: {
                 agency: {
-                    enterDelay: 300
+                    enterDelay: 0
                 },
                 higlights: {
-                    enterDelay: 300
+                    enterDelay: 0
                 },
             }
         });
@@ -98,11 +97,6 @@ export default class extends module {
             this.call('update', newContainer, 'app');
 
                 this.call('update', null, 'Scroll');
-            
-
-            // gsap.delayedCall(0.6, () => {
-            //     console.log('scroll')
-        // });
           
         });
 
@@ -112,20 +106,13 @@ export default class extends module {
             this.call('update', null, 'Scroll');
 
             html.classList.remove('has-menu-open');
-            
-            // if(transition == 'agency') {
-            //     this.call('toggle', null, 'Modal');
-            // }
-            
-            // if(transition == 'higlights') {
-            //     this.call('toggle', null, 'Modal');
-            // }
+        
         });
     }
 
 
-    // goTo(obj) {
-    //     this.load.goTo(obj.url, obj.transition);
-    // }
+    goTo(obj) {
+        this.load.goTo(obj.url, obj.transition);
+    }
 }
  

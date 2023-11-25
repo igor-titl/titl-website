@@ -12,11 +12,6 @@ export default class extends module {
         this.bindEvents()
     }
 
-    destroy() {
-        super.destroy()
-        this.unbindEvents()
-    }
-
     bindEvents() {
         this.el.addEventListener("click", this.onClickBind)
     }
@@ -28,5 +23,10 @@ export default class extends module {
     onClick() {
         this.call('scrollTo', { target: this.$target }, 'Scroll')
         
+    }
+
+    destroy() {
+        super.destroy()
+        this.unbindEvents()
     }
 }

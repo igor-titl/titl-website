@@ -4,19 +4,6 @@
   }
 }
 
-.c-higlights-project__item {
-  .is-finish-load.is-ready &.is-inview {
-    .c-higlights-project__left {
-      transform: translateX(0);
-      opacity: 1;
-    }
-    .c-higlights-project__right {
-      transform: translateX(0);
-      opacity: 1;
-    }
-  }
-}
-
 .c-higlights-project__video-icon {
   & svg {
     &:nth-child(1) {
@@ -69,13 +56,6 @@
     (var(--lenght) - (var(--lenght) * var(--progress, 0)))
   );
   stroke-dasharray: var(--lenght);
-}
-
-.c-higlights-project__divider {
-  transform-origin: left center;
-  .is-finish-load.has-dom-ready &.is-inview {
-    transform: scaleX(1);
-  }
 }
 
 @media (min-width: 767px) {

@@ -1,15 +1,3 @@
-/* ------ Lenis scroll fix ------ */
-
-.lenis.lenis-smooth {
-  scroll-behavior: auto;
-}
-
-html.lenis {
-  height: auto;
-}
-
-/* ------ >Lenis scroll fix ------ */
-
 body,
 html {
   min-height: 100%;
@@ -96,3 +84,11 @@ a {
 }
 
 /* ------ >Base style ------ */
+
+.c-home-hero {
+  --home-hero-height: calc(var(--vh, 1svh) * 100);
+  height: var(--home-hero-height);
+  @media (min-width: 992px) {
+    --home-hero-height: calc(min(var(--vh, 1svh) * 100, 80vw));
+  }
+}

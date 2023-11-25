@@ -23,18 +23,18 @@
   }
 }
 
-.c-modal__inner {
-  transform: translateY(100%);
-  @media (max-width: 767px) {
-  }
-  transition: transform 800ms $ease-power4-in-out;
-  .has-modal-open & {
-    transform: translateY(0);
-    @media (max-width: 767px) {
-      transform: translateY(0);
-    }
-  }
-}
+// .c-modal__inner-wrapper {
+//   transform: translateY(100%);
+//   @media (max-width: 767px) {
+//   }
+//   transition: transform 800ms $ease-power4-in-out;
+//   .has-modal-open &.is-ready {
+//     transform: translateY(0);
+//     @media (max-width: 767px) {
+//       transform: translateY(0);
+//     }
+//   }
+// }
 
 .c-modal__bg {
   opacity: 0;
@@ -50,5 +50,13 @@
   visibility: hidden;
   html.has-modal-open & {
     visibility: visible;
+  }
+}
+
+.c-layout {
+  transition: transform 800ms $ease-power4-in-out;
+  transform: translateY(100%);
+  .has-modal-open .c-modal .is-ready & {
+    transform: translateY(0);
   }
 }
