@@ -38,7 +38,8 @@ export default class extends module {
     }
 
     goToPrevious() {
-        // history.back()
+        html.classList.remove(CLASS.OPEN)
+        
 
         this.el.querySelectorAll('.c-layout').forEach((el) => {
             setTimeout(() => {
@@ -47,11 +48,8 @@ export default class extends module {
                 el.remove()    
 
             }, 800)
-            
 
         })
-        // this.el.querySelector('.c-scrollbar').remove()
-        html.classList.remove(CLASS.OPEN)
     }
 
 
