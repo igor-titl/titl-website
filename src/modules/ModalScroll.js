@@ -243,7 +243,7 @@ export default class extends module {
             scrollbarContainer: this.el.parentNode.parentNode.parentNode,
             // getDirection: true,
             // multiplier: 0.5,
-            lerp: 0.05,
+            // lerp: 0.05,
         });
 
         this.scroll.on('call', (func, way, obj, id) => {

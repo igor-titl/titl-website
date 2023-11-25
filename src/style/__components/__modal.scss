@@ -4,21 +4,9 @@
   transition: visibility 1800ms linear;
 
   html.has-modal-open & {
-    /* transform: translate3d(0%, 0%, 0px); */
     visibility: visible;
     pointer-events: auto;
   }
-  // html.has-modal-open-higlights &.is-higlights {
-  //   /* transform: translate3d(0%, 0%, 0px); */
-  //   visibility: visible;
-  //   pointer-events: auto;
-  // }
-  // .c-scrollbar {
-  //   height: calc(100% - 8.75rem);
-  //   @media (max-width: 767px) {
-  //     height: calc(100% - 1.5rem);
-  //   }
-  // }
 
   [data-scroll-section] {
     padding-bottom: 8.75rem;
@@ -37,20 +25,15 @@
 
 .c-modal__inner {
   transform: translateY(100%);
-  // clip-path: inset(100% 0 0 0 round 1.5rem 1.5rem 0 0);
   @media (max-width: 767px) {
-    // clip-path: inset(100% 0 0 0 round 1rem 1rem 0 0);
   }
   transition: transform 800ms $ease-power4-in-out;
   .has-modal-open & {
     transform: translateY(0);
-    // clip-path: inset(-10rem 0 0 0 round 1.5rem 1.5rem 0 0);
     @media (max-width: 767px) {
       transform: translateY(0);
-      // clip-path: inset(-10rem 0 0 0 round 1rem 1rem 0 0);
     }
   }
-  // transform: translateY(0);
 }
 
 .c-modal__bg {
@@ -63,18 +46,6 @@
   }
 }
 
-// .c-modal__inner-wrapper {
-//   opacity: 0;
-//   // transform: translateY(15rem);
-//   transition: opacity 800ms $ease-power3-in-out,
-//     transform 600ms $ease-power3-in-out;
-//   .has-modal-open-agency &.is-ready,
-//   .has-modal-open-higlights &.is-ready {
-//     opacity: 1;
-//     transition-delay: 50ms;
-//     // transform: translateY(0);
-//   }
-// }
 .c-modal__wrapper {
   visibility: hidden;
   html.has-modal-open & {
