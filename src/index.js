@@ -40,10 +40,10 @@ function init() {
 
   html.classList.add("is-first-load");
 
-  gsap.delayedCall(1.8, () => {
+  gsap.delayedCall(3.6, () => {
     html.classList.add("is-finish-load");
   });
-  gsap.delayedCall(0.2, () => {
+  gsap.delayedCall(1, () => {
     html.classList.add("has-dom-ready");
     html.classList.add("is-loaded");
     html.classList.add("is-ready");

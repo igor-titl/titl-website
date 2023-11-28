@@ -1,0 +1,23 @@
+.c-agency-gallery__image-mask {
+  clip-path: inset(10% round 1rem);
+  opacity: 0;
+  transition: clip-path 600ms cubic-bezier(0.215, 0.61, 0.355, 1),
+    opacity 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+@for $i from 1 through 5 {
+  .c-agency-gallery__grid-item:nth-child(#{$i}) {
+    .c-agency-gallery__image-mask {
+      transition-delay: 40ms * $i;
+    }
+  }
+}
+
+.c-agency-gallery__collection {
+  html.is-ready &.is-inview {
+    .c-agency-gallery__image-mask {
+      opacity: 1;
+      clip-path: inset(0% round 1rem);
+    }
+  }
+}

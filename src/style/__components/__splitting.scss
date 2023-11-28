@@ -48,7 +48,7 @@
 
 .u-anim-char[data-scroll].is-inview,
 .u-anim-char:not([data-scroll]) {
-  .is-finish-load.has-dom-ready & {
+  .has-dom-ready & {
     .char,
     .word {
       opacity: 1;

@@ -69,3 +69,39 @@
 .c-higlights-project__left-container {
   transform-style: preserve-3d;
 }
+
+.c-higlights-project__divider {
+  transform: scaleX(0);
+
+  transition: transform 800ms ease;
+  html.is-ready &.is-inview {
+    transform: scaleX(1);
+  }
+}
+
+.c-higlights-project__left {
+  opacity: 0;
+  @media (min-width: 768px) {
+    transform: translateX(-2rem);
+  }
+  transition: opacity 800ms ease, transform 800ms ease;
+  html.is-ready .c-higlights-project__item.is-inview & {
+    opacity: 1;
+    @media (min-width: 768px) {
+      transform: translateX(0);
+    }
+  }
+}
+.c-higlights-project__right {
+  opacity: 0;
+  @media (min-width: 768px) {
+    transform: translateX(2rem);
+  }
+  transition: opacity 800ms ease, transform 800ms ease;
+  html.is-ready .c-higlights-project__item.is-inview & {
+    opacity: 1;
+    @media (min-width: 768px) {
+      transform: translateX(0);
+    }
+  }
+}

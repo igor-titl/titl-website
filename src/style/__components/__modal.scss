@@ -54,8 +54,10 @@
 }
 
 .c-layout {
-  transition: transform 800ms $ease-power4-in-out;
-  transform: translateY(100%);
+  .c-modal & {
+    transition: transform 800ms $ease-power4-in-out;
+    transform: translateY(100%);
+  }
   .has-modal-open .c-modal .is-ready & {
     transform: translateY(0);
   }
