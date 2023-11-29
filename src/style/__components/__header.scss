@@ -113,5 +113,17 @@
         opacity: 1 !important;
       }
     }
+
+    .c-form__button-shedule:hover ~ .c-form__button-submit-inner {
+      .c-form__text {
+        opacity: 1 !important;
+      }
+      .char {
+        opacity: 1 !important;
+      }
+      .word {
+        opacity: 1 !important;
+      }
+    }
   }
 }

@@ -10,6 +10,10 @@
 
   [data-scroll-section] {
     padding-bottom: 8.75rem;
+
+    @media (max-width: 767px) {
+      padding-bottom: 5.8rem;
+    }
   }
 }
 
