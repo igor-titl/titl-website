@@ -50,6 +50,57 @@
   opacity: 0;
 }
 
+.c-cases-hero__btn-container {
+  .char {
+    opacity: 0;
+  }
+  .word {
+    opacity: 0;
+  }
+  .c-cases-hero__btn-text {
+    opacity: 0;
+  }
+}
+
+.c-cases-hero__btn-container {
+  .c-cases-hero__btn-text {
+    transition: opacity 200ms step-start;
+    transition-delay: calc(var(--item-index) * 50ms);
+  }
+  .char {
+    transition: opacity 200ms step-start;
+    transition-delay: calc(var(--char-index) * 50ms);
+    &:nth-child(5n-1) {
+      transition-delay: calc(var(--char-index) * 80ms);
+    }
+    &:nth-child(5n-2) {
+      transition-delay: calc(var(--char-index) * 40ms);
+    }
+    &:nth-child(5n-3) {
+      transition-delay: calc(var(--char-index) * 70ms);
+    }
+    &:nth-child(5n-4) {
+      transition-delay: calc(var(--char-index) * 60ms);
+    }
+  }
+  .word {
+    transition: opacity 200ms step-start;
+    transition-delay: calc(var(--word-index) * 50ms);
+    &:nth-child(5n-1) {
+      transition-delay: calc(var(--word-index) * 80ms);
+    }
+    &:nth-child(5n-2) {
+      transition-delay: calc(var(--word-index) * 30ms);
+    }
+    &:nth-child(5n-3) {
+      transition-delay: calc(var(--word-index) * 40ms);
+    }
+    &:nth-child(5n-4) {
+      transition-delay: calc(var(--word-index) * 60ms);
+    }
+  }
+}
+
 .c-footer .c-form__text {
   transition: opacity 200ms step-start;
   transition-delay: calc(var(--item-index) * 50ms);
@@ -114,7 +165,21 @@
       }
     }
 
-    .c-form__button-shedule:hover ~ .c-form__button-submit-inner {
+    .c-onplan__btn:hover,
+    .c-five__btn:hover,
+    .c-aterian__btn:hover {
+      .c-cases-hero__btn-container .c-cases-hero__btn-text {
+        opacity: 1;
+      }
+      .char {
+        opacity: 1 !important;
+      }
+      .word {
+        opacity: 1 !important;
+      }
+    }
+
+    .c-form__button-submit:hover ~ .c-form__button-submit-inner {
       .c-form__text {
         opacity: 1 !important;
       }
@@ -124,6 +189,18 @@
       .word {
         opacity: 1 !important;
       }
+    }
+  }
+}
+
+.c-header__item {
+  transition: transform 600ms $ease-power4-in-out;
+  @for $i from 1 through 2 {
+    .is-finish-load[data-scroll-direction="down"] &:nth-child(#{$i}) {
+      transform: translateY(-210%);
+    }
+    &:nth-child(2) {
+      transition-delay: 50ms;
     }
   }
 }

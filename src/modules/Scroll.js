@@ -197,11 +197,6 @@ export default class extends module {
         this.bindEvents()
     }
 
-    destroy() {
-        this.scroll.destroy();
-        this.unbindEvents()
-        super.destroy()
-    }
 
     ///////////////
     // Events
@@ -230,6 +225,7 @@ export default class extends module {
         this.scroll = new LocomotiveScroll({
             el: this.el,
             smooth: this.isSmooth,
+            getDirection: true,
             mobile:{
                 breakpoint:0,
                 smooth: true,
@@ -256,31 +252,37 @@ export default class extends module {
         });
 
         this.scroll.on('scroll', (args) => {
-            window.scrollDirection = args.direction
+            // window.scrollDirection = args.direction
 
-            if(args.scroll.y > 200 && !html.classList.contains('has-scrolled')) {
-                html.classList.add('has-scrolled');
-            } else if (args.scroll.y < 200 && html.classList.contains('has-scrolled')) {
-                html.classList.remove('has-scrolled');
+
+            if(args.direction != this.currentDirection) {   
+                html.setAttribute('data-scroll-direction', args.direction)
+                this.currentDirection = args.direction;
             }
 
-            // Scroll image
-            if (typeof args.currentElements['scrollImage'] === 'object') {
-                const progress = args.currentElements['scrollImage'].progress
-                this.call('onProgress', progress, 'ScrollImage')
-            }
+            // if(args.scroll.y > 200 && !html.classList.contains('has-scrolled')) {
+            //     html.classList.add('has-scrolled');
+            // } else if (args.scroll.y < 200 && html.classList.contains('has-scrolled')) {
+            //     html.classList.remove('has-scrolled');
+            // }
 
-            // Team
-            if (typeof args.currentElements['team'] === 'object') {
-                const progress = args.currentElements['team'].progress
-                this.call('onProgress', progress, 'Team')
-            }
+            // // Scroll image
+            // if (typeof args.currentElements['scrollImage'] === 'object') {
+            //     const progress = args.currentElements['scrollImage'].progress
+            //     this.call('onProgress', progress, 'ScrollImage')
+            // }
 
-            // Progress carousel
-            if (typeof args.currentElements['progressCarousel'] === 'object') {
-                const progress = args.currentElements['progressCarousel'].progress
-                this.call('onProgress', progress, 'ProgressCarousel')
-            }
+            // // Team
+            // if (typeof args.currentElements['team'] === 'object') {
+            //     const progress = args.currentElements['team'].progress
+            //     this.call('onProgress', progress, 'Team')
+            // }
+
+            // // Progress carousel
+            // if (typeof args.currentElements['progressCarousel'] === 'object') {
+            //     const progress = args.currentElements['progressCarousel'].progress
+            //     this.call('onProgress', progress, 'ProgressCarousel')
+            // }
         })
     }
 
@@ -350,6 +352,7 @@ export default class extends module {
 
     destroy() {
         super.destroy()
+        this.unbindEvents()
         this.scroll?.destroy();
     }
 }
