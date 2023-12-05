@@ -15,4 +15,6 @@ export { default as ModalClose } from "./modules/ModalClose";
 export { default as Modal } from "./modules/Modal";
 export { default as Menu } from "./modules/Menu";
 export { default as MenuButton } from "./modules/MenuButton";
+export { default as Form } from "./modules/Form";
+export { default as TextFlip } from "./modules/TextFlip";
 // export { default as ScrollModal } from "./modules/ScrollModal";

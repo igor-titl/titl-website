@@ -2,7 +2,7 @@
 ////// GLOBALS ///// 
 /////////////////// */
 
-@import "style/__globals/__base";
+@import "style/globals/base";
 
 /* ////////////////////
 ////// SECTION /////// 
@@ -16,41 +16,42 @@
 ////// GLOBALS /////// 
 ///////////////////// */
 
-@import "style/__globals/__scrollbar";
-@import "style/__globals/__media";
-@import "style/__globals/__easing";
-@import "style/__globals/__locomotive-scroll";
+@import "style/globals/scrollbar";
+@import "style/globals/media";
+@import "style/globals/easing";
+@import "style/globals/locomotive-scroll";
 
 /* ///////////////////////
 ////// COMPONENTS /////// 
 //////////////////////// */
 
-@import "style/__components/__cases";
-@import "style/__components/_client";
-@import "style/__components/__footer";
-@import "style/__components/__form";
-@import "style/__components/__pageAgency";
-@import "style/__components/__preloader";
-@import "style/__components/__splitting";
-@import "style/__components/__header";
-@import "style/__components/__transition";
-@import "style/__components/__higlights";
-@import "style/__components/__modal";
-@import "style/__components/__menu";
-@import "style/__components/__aterian";
-@import "style/__components/__onPlan";
-@import "style/__components/__readTheory";
-@import "style/__components/__prime";
-@import "style/__components/__display";
-@import "style/__components/__finch";
+@import "style/components/cases";
+@import "style/components/client";
+@import "style/components/form";
+@import "style/components/footer";
+@import "style/components/form";
+@import "style/components/pageAgency";
+@import "style/components/preloader";
+@import "style/components/splitting";
+@import "style/components/header";
+@import "style/components/transition";
+@import "style/components/higlights";
+@import "style/components/modal";
+@import "style/components/menu";
+@import "style/components/aterian";
+@import "style/components/onPlan";
+@import "style/components/readTheory";
+@import "style/components/prime";
+@import "style/components/display";
+@import "style/components/finch";
 
-@import "style/__components/agency-gallery";
+@import "style/components/agency-gallery";
 
 /* //////////////////
 ////// UTILS /////// 
 /////////////////// */
 
 // @import "style/utility/text";
-@import "style/__utility/__image";
+@import "style/utility/image";
 
 @import "swiper/css";
