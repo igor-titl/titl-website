@@ -1,5 +1,4 @@
 import { module } from "modujs";
-import { html } from "../utils/environment";
 
 // Builds the correct URL to pass into the Advanced Embed Code
 const URL = "";
