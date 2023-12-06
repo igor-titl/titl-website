@@ -43,6 +43,10 @@ export default class extends module {
 
 
     this.player = new Player(this.$video);
+    // this.player.unload()
+    // console.log(this.player.unload());
+
+
     
     this.updateVideo()
    

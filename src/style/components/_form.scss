@@ -174,3 +174,25 @@ input:-webkit-autofill:focus {
 .c-form__wrapper {
   display: block !important;
 }
+
+.c-form__field {
+  &.error {
+    color: #d93e3e;
+    .c-form__field-label {
+      color: #d93e3e;
+    }
+    .c-form__field-caret:before {
+      background-color: #d93e3e;
+    }
+    .c-form__enter {
+      color: #d93e3e;
+      border-color: #d93e3e;
+    }
+  }
+  &:before {
+    transition: background-color 400ms ease;
+  }
+  &.error:before {
+    background-color: #d93e3e;
+  }
+}
