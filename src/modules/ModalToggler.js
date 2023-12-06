@@ -1,5 +1,4 @@
 import { module } from 'modujs';
-import { html } from '../utils/environment'
 
 export default class extends module {
     constructor(m) {
@@ -33,7 +32,7 @@ export default class extends module {
             const cLayout = document.querySelector('.c-layout');
             if (cLayout) {
                 clearInterval(intervalId);
-                console.log(clearInterval(intervalId))
+                // console.log(clearInterval(intervalId))
                 this.onTransitionEnd();
             }
         });

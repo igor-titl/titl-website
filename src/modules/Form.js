@@ -1,7 +1,6 @@
 import { module } from "modujs";
 
 
-const URL = 'https://calendly.com/koliabez/call'
 
 export default class extends module {
   constructor(m) {
@@ -17,6 +16,13 @@ export default class extends module {
     };
 
     this.$inputs = Array.from(this.$("input"));
+
+    this.$calendlyName = this.getData('calendly-name');
+    this.$calendlyUser = this.getData('calendly-user');
+
+
+    this.$calendlyURL = `https://calendly.com/${this.$calendlyUser}/${this.$calendlyName}`
+
   }
 
 //   init() {
@@ -107,7 +113,7 @@ hideCalendly() {
 
 
     Calendly.initPopupWidget({
-      url: URL,
+      url: this.$calendlyURL,
       prefill: {
         name: this.$inputs[0].value,
         email: this.$inputs[1].value,
