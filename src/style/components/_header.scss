@@ -204,3 +204,10 @@
     }
   }
 }
+
+.c-header__item-logo {
+  transition: transform 600ms $ease-power4-in-out;
+  .is-finish-load[data-scroll-direction="down"] & {
+    transform: translateY(-210%);
+  }
+}
