@@ -61,6 +61,10 @@ export default class extends module {
     }
   }
 
+  play(){
+    this.player.play()
+  }
+
 
   muteVideo() {
     this.player.setVolume(0);

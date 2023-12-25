@@ -1,4 +1,5 @@
 import { module } from 'modujs';
+import Player from "@vimeo/player";
 
 export default class extends module {
     constructor(m) {
@@ -7,6 +8,6 @@ export default class extends module {
 
     play(e) {
         if(e.obj.el != this.el) return;
-        this.el.play()
+        this.call('play', null, 'Video')
     }
 }
