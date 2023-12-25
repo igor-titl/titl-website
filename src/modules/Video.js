@@ -61,7 +61,10 @@ export default class extends module {
     }
   }
 
-  play(){
+  play(params){
+    const {target} = params
+    this.player = new Player(target);
+
     this.player.play()
   }
 
