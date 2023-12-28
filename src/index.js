@@ -27,6 +27,10 @@ window.onload = (event) => {
   }
 };
 
+window.firstHit = true;
+window.readyDelay = 0.6;
+window.readyCallbackDelay = 0;
+
 function init() {
   app.init(app);
 

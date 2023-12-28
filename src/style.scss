@@ -4,22 +4,35 @@
 
 @import "style/globals/base";
 
+@import "style/globals/scrollbar";
+@import "style/globals/media";
+@import "style/globals/easing";
+@import "style/globals/locomotive-scroll";
+
 /* ////////////////////
 ////// SECTION /////// 
 ///////////////////// */
+
+/* //////////////////
+////// UTILS /////// 
+/////////////////// */
+
+// @import "style/utility/text";
+@import "style/utility/image";
+
+@import "swiper/css";
+
+// @import "../node_modules/locomotive-scroll/dist/locomotive-scroll";
 
 /* /////////////////
 ////// PAGE /////// 
 ////////////////// */
 
 /* ////////////////////
-////// GLOBALS /////// 
+////// OBJECTS /////// 
 ///////////////////// */
 
-@import "style/globals/scrollbar";
-@import "style/globals/media";
-@import "style/globals/easing";
-@import "style/globals/locomotive-scroll";
+@import "style/objects/scroll";
 
 /* ///////////////////////
 ////// COMPONENTS /////// 
@@ -34,8 +47,9 @@
 @import "style/components/preloader";
 @import "style/components/splitting";
 @import "style/components/header";
-@import "style/components/transition";
+// @import "style/components/transition";
 @import "style/components/higlights";
+@import "style/components/load";
 @import "style/components/modal";
 @import "style/components/menu";
 @import "style/components/aterian";
@@ -46,12 +60,3 @@
 @import "style/components/finch";
 
 @import "style/components/agency-gallery";
-
-/* //////////////////
-////// UTILS /////// 
-/////////////////// */
-
-// @import "style/utility/text";
-@import "style/utility/image";
-
-@import "swiper/css";

@@ -4,7 +4,7 @@ export default class extends module {
     constructor(m) {
         super(m)
         this.$el = this.el
-        this.$target = this.$el.getAttribute('href')
+        this.$target = this.getData('href')
         this.onClickBind = this.onClick.bind(this)
     }
 

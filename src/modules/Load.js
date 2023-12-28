@@ -1,6 +1,8 @@
+
+
 // import { module } from 'modujs';
-// import { html } from '../utils/environment';
 // import modularLoad from 'modularload';
+// import { html } from '../utils/environment';
 
 
 // export default class extends module {
@@ -10,69 +12,41 @@
 
 //     init() {
 //         this.load = new modularLoad({
-//             enterDelay: 200,
+//             enterDelay: 0,
+//             exitDelay: 600,
 //             transitions: {
-//                 agency: {
-//                     enterDelay: 0
-//                 }
 //             }
-//         });
-
-//         this.load.on('loading', (transition, oldContainer) => {
-//             html.classList.remove('has-dom-ready');
-//             html.classList.remove('has-scrolled');
-//             html.classList.remove('has-nav-open');
-            
-//             // html.classList.remove('has-filters- stick');
-//             // html.classList.remove('-hide');
-//             // html.classList.remove('has-nav-open-callback');
-
-//             html.classList.add('is-loading-callback');
-
 //         });
 
 //         this.load.on('loaded', (transition, oldContainer, newContainer) => {
 //             this.call('destroy', oldContainer, 'app');
 //             this.call('update', newContainer, 'app');
 
-//             // html.setAttribute('data-direction', '');
-//             // html.setAttribute('data-theme', newContainer.getAttribute('data-theme'));
-
-//             gsap.delayedCall(0.2, () => {
-
-//                 html.classList.add('has-dom-ready');
-
-//                 // gsap.delayedCall(0.4, () => {
-//                 //     html.classList.remove('is-loading-callback');
-//                 // });
-//             });
+//                 this.call('update', null, 'Scroll');
+          
 //         });
-
-//         // window.addEventListener('modularimages', () => {
-//         //     this.call('update', null, 'Scroll')
-//         // })
 
 //         this.load.on('loading', (transition, oldContainer) => {
 //             this.call('close', null, 'Menu');
 
-//             if(transition == 'agency') {
-//                 this.call('toggle', null, 'Modal');
-//             }
+//             this.call('update', null, 'Scroll');
+
+//             html.classList.remove('has-menu-open');
+        
 //         });
 //     }
 
-    
 
-//     goTo(options) {
-//         const { url, transition } = options;
-//         this.load.goTo(url, transition);
+//     goTo(obj) {
+//         this.load.goTo(obj.url, obj.transition);
 //     }
 // }
+ 
 
 import { module } from 'modujs';
 import modularLoad from 'modularload';
-import { html } from '../utils/environment';
-
+import gsap from 'gsap';
+import { html, body } from '../utils/environment';
 
 export default class extends module {
     constructor(m) {
@@ -80,39 +54,87 @@ export default class extends module {
     }
 
     init() {
-        this.load = new modularLoad({
-            enterDelay: 0,
-            transitions: {
-                agency: {
-                    enterDelay: 0
-                },
-                higlights: {
-                    enterDelay: 0
-                },
-            }
+        gsap.delayedCall(window.readyDelay,() => {
+            this.setSizes();
         });
 
-        this.load.on('loaded', (transition, oldContainer, newContainer) => {
+        const load = new modularLoad({
+            // enterDelay: 0,
+            exitDelay: 800,
+            transitions: {
+                modal: {
+                    // enterDelay: 0,
+                    // exitDelay: 600,
+                }
+            }
+        });
+        
+        load.on('loading', (transition, oldContainer) => {
+            html.classList.remove('has-dom-ready');
+            html.classList.remove('has-dom-ready-callback');
+            html.classList.remove('has-dom-animated');
+
+            html.classList.add('is-preloading');
+
+            this.call('close','Nav');
+
+            console.log('loading');
+        });
+
+        load.on('loaded', (transition, oldContainer, newContainer) => {
+            
             this.call('destroy', oldContainer, 'app');
             this.call('update', newContainer, 'app');
 
-                this.call('update', null, 'Scroll');
-          
-        });
+            let url = window.location.href;
 
-        this.load.on('loading', (transition, oldContainer) => {
-            this.call('close', null, 'Menu');
+            if (typeof window._paq !== "undefined") {
+                _paq.push(["setCustomUrl", url]);
+                _paq.push(["setDocumentTitle", document.title]);
+                _paq.push(["trackPageView"]);
+            }
 
-            this.call('update', null, 'Scroll');
+            gsap.delayedCall(window.readyDelay,() => {
+                html.setAttribute('data-theme','');
+                html.classList.remove('is-preloading');
+                html.classList.add('has-dom-ready');
 
-            html.classList.remove('has-menu-open');
-        
+                this.setSizes();
+                
+                body.setAttribute('class',newContainer.getAttribute('class'));
+
+               
+                
+            });
+
+            gsap.delayedCall(window.readyCallbackDelay,() => {
+                html.classList.add('has-dom-ready-callback');
+                html.classList.add('has-dom-animated');
+            });
         });
     }
 
+    setSizes() {
+        
+        if (window.innerHeight - document.documentElement.clientHeight > 0) {
+            body.classList.add('has-scrollbar-y');
+            document.documentElement.style.setProperty('--scrollbar',`${window.innerHeight - document.documentElement.clientHeight}px`);
+        } else {
+            body.classList.remove('has-scrollbar-y');
+        }
 
-    goTo(obj) {
-        this.load.goTo(obj.url, obj.transition);
+        // screen height
+        document.documentElement.style.setProperty('--app-availheight',`${window.screen.availHeight}px`);
+        document.documentElement.style.setProperty('--app-height',`${window.innerHeight}px`);
+        document.documentElement.style.setProperty('--app-height-negative',`-${window.innerHeight}px`);
+
+        window.addEventListener('resize',() => {
+
+            if(!window.isMobile) {
+                document.documentElement.style.setProperty('--app-availheight',`${window.screen.availHeight}px`);
+                document.documentElement.style.setProperty('--app-height',`${window.innerHeight}px`);
+                document.documentElement.style.setProperty('--app-height-negative',`-${window.innerHeight}px`);
+            }
+        });
     }
 }
- 

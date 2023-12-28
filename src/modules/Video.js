@@ -36,21 +36,60 @@ export default class extends module {
   ///////////////
   init() {
 
-
-    // const option = {
-    //   id: this.$videoId,
-    // };
-
-
     this.player = new Player(this.$video);
-    // this.player.unload()
-    // console.log(this.player.unload());
+    this.updateVideo()
+
+    // this.player.play()
+
+    // console.log(this.player)
+
+   
+  // this.player('u')
 
 
     
-    this.updateVideo()
+    // console.log(this.player.unload());
+// if(this.$video.classList.contains('is-inview')){
+
+// this.play()
+// }
    
+
   } 
+
+
+
+  play(el){
+    // const { target } = params
+
+    // console.log(target)
+
+// // if(el.obj.el.classList.contains('is-inview')){
+// // this.player.play()
+// //   }
+    // const target = el.obj.el
+    // console.log(target)
+// //     // // this.player
+    
+    
+// //     // if(params.obj.el.classList.contains('is-inview')) return;
+    
+// //     // // console.log(params)
+// //     // // this.player.()
+// //     // // this.player.autoplay = 1
+// // //     this.player = new Player(el.obj.el);
+   
+// // // console.log(el.obj.el)
+
+// this.player = new Player(target);
+// this.player.play()
+// // // setTimeout(() => {
+// // // }, 1000)
+
+
+// //     // this.player.setVolume(0)
+  }
+
 
 
   toggleVideo() {
@@ -61,13 +100,7 @@ export default class extends module {
     }
   }
 
-  play(params){
-    const {target} = params
-    this.player = new Player(target);
-
-    this.player.play()
-  }
-
+ 
 
   muteVideo() {
     this.player.setVolume(0);
@@ -79,15 +112,15 @@ export default class extends module {
     // this.player.setVolume(1);
 
 
-    const videos = document.querySelectorAll('[data-video="toggler"]');
+    // const videos = document.querySelectorAll('[data-video="toggler"]');
     
-    for (let i = 0; i < videos.length; i++) {
-        if (videos[i] !== this.$video) {
-            const player = new Player(videos[i]);
-            videos[i].classList.remove('has-played')
-            player.setVolume(0);
-        }
-    }
+    // for (let i = 0; i < videos.length; i++) {
+    //     if (videos[i] !== this.$video) {
+    //         const player = new Player(videos[i]);
+    //         videos[i].classList.remove('has-played')
+    //         player.setVolume(0);
+    //     }
+    // }
 
     
     this.player.setVolume(1);
@@ -113,8 +146,8 @@ export default class extends module {
 
   }
 
-  destroy() {
-    super.destroy();
-    this.player.destroy()
-  }
+  // destroy() {
+  //   super.destroy();
+  //   this.player.destroy()
+  // }
 }

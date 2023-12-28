@@ -1,0 +1,109 @@
+[data-load-container="main"].is-old,
+[data-load-container="main"].is-new {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: -1;
+}
+[data-load-container="modal"].is-old,
+[data-load-container="modal"].is-new {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 66;
+}
+
+.c-transition_overlay {
+  position: fixed;
+  top: 0;
+  pointer-events: none;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+  background-color: rgba(19, 28, 38, 0.5);
+  opacity: 0;
+  transition: opacity 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+[data-page="agency"] .c-transition_overlay {
+  opacity: 1;
+}
+
+html:not(.is-ready) .c-header {
+  z-index: 2;
+}
+
+[data-page="agency"] .c-header {
+  z-index: 2;
+}
+
+html.has-dom-ready-callback [data-load-container="main"].is-old .c-transition {
+  opacity: 0;
+}
+
+// html.is-first-load .c-transition_overlay {
+//   transition: transform 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+// }
+
+// html.has-dom-ready-callback .c-transition_overlay,
+// [data-load-container].is-old .c-transition_overlay {
+//   transform: scale3d(1, 0, 1);
+//   transition-delay: 0.1s;
+// }
+
+.c-transition_wrap {
+  position: relative;
+  overflow: hidden;
+  //   transform: translate3d(0, 100vh, 0);
+  z-index: 66;
+}
+
+.c-transition_wrap.is-modal {
+  position: relative;
+  overflow: hidden;
+  transform: translate3d(0, 100vh, 0);
+  z-index: 66;
+}
+
+html.is-first-load .c-transition_wrap {
+  transition: transform 800ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+// html.is-first-load .c-transition_wrap::before {
+//   transition: transform 800ms cubic-bezier(0.645, 0.045, 0.355, 1),
+//     opacity 1s cubic-bezier(0.645, 0.045, 0.355, 1);
+// }
+
+html[data-page="agency"].has-dom-ready-callback .c-transition_wrap.is-modal {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.c-transition {
+  max-height: 100vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  //   transform: translate3d(0, -25vh, 0) scale3d(1, 2, 1);
+  //   transform-origin: center top;
+}
+
+html.is-first-load .c-transition {
+  transition: transform 800ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    opacity 800ms cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+html[data-page="agency"].has-dom-ready-callback
+  [data-load-container].is-old
+  .c-transition.is-modal {
+  opacity: 1;
+  transform: translate3d(0, 100vh, 0);
+}
+
+@media (max-width: 699px) {
+  .c-transition {
+    max-height: var(--app-height);
+  }
+}
