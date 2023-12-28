@@ -132,6 +132,9 @@ export default class extends module {
     window.scrollVelocity = velocity;
 
     window.scrollDirection = direction;
+
+    // console.log(window.scrollDirection)
+    html.setAttribute('data-scroll-direction', window.scrollDirection)
   }
 
   onResize() {
