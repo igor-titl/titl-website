@@ -74,6 +74,8 @@ export default class extends module {
             html.classList.remove('has-dom-ready-callback');
             html.classList.remove('has-dom-animated');
 
+            html.getAttribute('data-scroll-direction', 'up')
+
             html.classList.add('is-preloading');
 
             this.call('close','Nav');
@@ -82,10 +84,10 @@ export default class extends module {
         });
 
         load.on('loaded', (transition, oldContainer, newContainer) => {
-            
+           
             this.call('destroy', oldContainer, 'app');
             this.call('update', newContainer, 'app');
-
+            html.getAttribute('data-scroll-direction', 'up')
             let url = window.location.href;
 
             if (typeof window._paq !== "undefined") {
