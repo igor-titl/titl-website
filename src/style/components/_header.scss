@@ -196,7 +196,8 @@
 .c-header__item {
   transition: transform 600ms $ease-power4-in-out;
   @for $i from 1 through 2 {
-    .is-finish-load[data-scroll-direction="down"] &:nth-child(#{$i}) {
+    html[data-page="home"].is-finish-load[data-scroll-direction="down"]
+      &:nth-child(#{$i}) {
       transform: translateY(-210%);
     }
     &:nth-child(1) {
@@ -210,7 +211,7 @@
 
 .c-header__item-logo {
   transition: transform 600ms $ease-power4-in-out;
-  .is-finish-load[data-scroll-direction="down"] & {
+  html[data-page="home"].is-finish-load[data-scroll-direction="down"] & {
     transform: translateY(-210%);
   }
 }
