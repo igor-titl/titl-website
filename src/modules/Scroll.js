@@ -134,7 +134,12 @@ export default class extends module {
     window.scrollDirection = direction;
 
     // console.log(window.scrollDirection)
-    html.setAttribute('data-scroll-direction', window.scrollDirection)
+    if(window.scrollDirection == '1' || window.scrollDirection == '0') {
+      html.setAttribute('data-scroll-direction', 'down')
+    } else {
+        html.setAttribute('data-scroll-direction', 'up')
+    }
+    
   }
 
   onResize() {
