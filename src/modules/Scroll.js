@@ -138,7 +138,7 @@ export default class extends module {
             return
         }
 
-    if(window.scrollDirection == '1') {
+    if(window.scrollDirection == '1' && html.getAttribute('data-page') == 'home') {
       html.setAttribute('data-scroll-direction', 'down')
     } else {
         html.setAttribute('data-scroll-direction', 'up')
