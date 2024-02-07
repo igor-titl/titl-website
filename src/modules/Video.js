@@ -115,7 +115,7 @@ export default class extends module {
 
   toggleVideo() {
     // let video = document.querySelectorAll('iframe')
-    // const videoContainer = document.querySelectorAll('[data-video="toggler"]');
+    const videoContainer = document.querySelectorAll('[data-video="toggler"]');
     if (this.$el.classList.contains("has-played")) {
       this.muteVideo();
     } else {
