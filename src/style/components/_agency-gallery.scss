@@ -21,3 +21,12 @@
 //     }
 //   }
 // }
+
+.u-parallax .c-image_img {
+  transform: translate3d(0, calc(var(--progress) * 4rem), 0);
+}
+
+.c-layout {
+  border-radius: 0;
+  clip-path: inset(0 round calc(2.5rem - var(--progress) * 2.5rem));
+}

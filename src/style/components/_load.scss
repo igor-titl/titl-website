@@ -28,7 +28,7 @@
   transition: opacity 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-[data-page="agency"] .c-transition_overlay {
+[data-template="modal"] .c-transition_overlay {
   opacity: 1;
 }
 
@@ -36,7 +36,7 @@ html:not(.is-ready) .c-header {
   z-index: 2;
 }
 
-[data-page="agency"] .c-header {
+[data-template="modal"] .c-header {
   z-index: 2;
 }
 
@@ -69,15 +69,19 @@ html.has-dom-ready-callback [data-load-container="main"].is-old .c-transition {
 }
 
 html.is-first-load .c-transition_wrap {
-  transition: transform 800ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: transform 600ms cubic-bezier(0.27, 0.44, 0.02, 0.91);
 }
 
 // html.is-first-load .c-transition_wrap::before {
 //   transition: transform 800ms cubic-bezier(0.645, 0.045, 0.355, 1),
 //     opacity 1s cubic-bezier(0.645, 0.045, 0.355, 1);
 // }
+html[data-template="modal"]:not(.is-modal) .c-transition_wrap.is-modal {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
 
-html[data-page="agency"].has-dom-ready-callback .c-transition_wrap.is-modal {
+html[data-template="modal"].has-dom-ready.is-modal .c-transition_wrap.is-modal {
   opacity: 1;
   transform: translate3d(0, 0, 0);
 }
@@ -91,11 +95,11 @@ html[data-page="agency"].has-dom-ready-callback .c-transition_wrap.is-modal {
 }
 
 html.is-first-load .c-transition {
-  transition: transform 800ms cubic-bezier(0.645, 0.045, 0.355, 1),
-    opacity 800ms cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: transform 600ms cubic-bezier(0.645, 0.045, 0.355, 1),
+    opacity 600ms cubic-bezier(0.645, 0.045, 0.355, 1);
 }
 
-html[data-page="agency"].has-dom-ready-callback
+html[data-template="modal"].has-dom-ready
   [data-load-container].is-old
   .c-transition.is-modal {
   opacity: 1;

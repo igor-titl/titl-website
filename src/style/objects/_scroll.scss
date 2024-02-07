@@ -1,5 +1,9 @@
 .o-scroll {
   &.is-modal {
     padding-top: 11rem;
+
+    @media (max-width: 767px) {
+      padding-top: 6.5rem;
+    }
   }
 }

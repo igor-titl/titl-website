@@ -10,7 +10,7 @@ export default class extends module {
 
         if(e.obj.el != this.el) return;
 const element = this.el
-console.log(element)
+// console.log(element)
 
         this.call('videoAutoplay', {target: element}, 'Video')
     }

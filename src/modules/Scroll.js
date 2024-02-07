@@ -8,7 +8,6 @@ import { html } from "../utils/environment";
 const HEADER_THRESHOLD = 300;
 
 export default class extends module {
-
   constructor(m) {
     super(m);
 
@@ -21,32 +20,29 @@ export default class extends module {
     // Binding
     this.onResizeBind = this.onResize.bind(this);
     this.onScrollBind = this.onScroll.bind(this);
-    this.$wrapper = typeof this.getData('wrapper') == 'string' ? document.querySelector(this.getData('wrapper')) : window;
-}
+    this.$wrapper =
+      typeof this.getData("wrapper") == "string"
+        ? document.querySelector(this.getData("wrapper"))
+        : window;
+  }
 
   ///////////////
   // Lifecyle
   ///////////////
+
   init() {
 
     // Events
     this.bindEvents();
 
-    // scrollLink.forEach(link => {
-    //     link.addEventListener('click', (event) => {
-    //       event.preventDefault();
-    //       console.log(event)
-    //     })
-    // })
 
-
-    console.log("lenis init");
+    // console.log("lenis init");
 
     // Scroll Instance
     this.locomotiveScrollInstance = new LocomotiveScroll({
       lenisOptions: {
-          content: this.el,
-          wrapper: this.$wrapper,
+        content: this.el,
+        wrapper: this.$wrapper,
         duration: 1.2,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
         direction: "vertical", // vertical, horizontal
@@ -76,27 +72,21 @@ export default class extends module {
     }
 
     if (html.scrollTop > 1000) {
-      console.log('scrolled')
-      html.style.setProperty('--header-progress', 1);
+      // console.log("scrolled");
+      html.style.setProperty("--header-progress", 1);
     }
   }
 
   closeMenu() {
-    console.log("close");
+    // console.log("close");
     $(".u-menu-close").click();
   }
   openMenu() {
-    console.log("open");
+    // console.log("open");
     $(".u-menu-open").click();
   }
 
-  destroy() {
-    // Events
-    this.unbindEvents();
 
-    // Scroll Instance
-    this.locomotiveScrollInstance?.destroy();
-  }
 
   ///////////////
   // Events
@@ -124,7 +114,7 @@ export default class extends module {
     }
 
     if (html.scrollTop > 1000) {
-      html.style.setProperty('--header-progress', 1);
+      html.style.setProperty("--header-progress", 1);
     }
 
     // Set global velocity variable
@@ -134,16 +124,18 @@ export default class extends module {
     window.scrollDirection = direction;
 
     // console.log(window.scrollDirection)
-        if(window.scrollDirection == '0'){
-            return
-        }
-
-    if(window.scrollDirection == '1' && html.getAttribute('data-page') == 'home') {
-      html.setAttribute('data-scroll-direction', 'down')
-    } else {
-        html.setAttribute('data-scroll-direction', 'up')
+    if (window.scrollDirection == "0") {
+      return;
     }
-    
+
+    if (
+      window.scrollDirection == "1" &&
+      html.getAttribute("data-page") == "home"
+    ) {
+      html.setAttribute("data-scroll-direction", "down");
+    } else {
+      html.setAttribute("data-scroll-direction", "up");
+    }
   }
 
   onResize() {
@@ -179,11 +171,11 @@ export default class extends module {
     this.locomotiveScrollInstance?.addScrollElements($newContainer);
   }
 
-//   shuffle(args) {
-//     // shuffleText(args.target);
+  //   shuffle(args) {
+  //     // shuffleText(args.target);
 
-//     this.call('shuffleText', {target: args.target}, 'Shuffle');
-//   }
+  //     this.call('shuffleText', {target: args.target}, 'Shuffle');
+  //   }
 
   stop() {
     this.locomotiveScrollInstance?.stop();
@@ -192,6 +184,10 @@ export default class extends module {
   start() {
     this.locomotiveScrollInstance?.start();
   }
+
+  // update() {
+  //   this.locomotiveScrollInstance?.update();
+  // }
 
   /**
    * ScrollTo
@@ -204,22 +200,24 @@ export default class extends module {
    */
   scrollTo(params) {
     const { target, options } = params;
-    
-    // this.locomotiveScrollInstance?.lenisInstance?.scrollTo(target, options);
     this.locomotiveScrollInstance.scrollTo(target, options);
-    // this.scroll?.scrollTo(target, options);
-
   }
 
+  destroy() {
+    // Events
+    this.unbindEvents();
+
+    // Scroll Instance
+    this.locomotiveScrollInstance?.destroy();
+  }
 
   // Hide header when footer is in-view
-//   hideHeader(args) {
-//     if (args.way === "enter") {
-//       html.classList.add("has-header-hidden");
-//     }
-//     if (args.way === "leave") {
-//       html.classList.remove("has-header-hidden");
-//     }
-//   }
-  
+  //   hideHeader(args) {
+  //     if (args.way === "enter") {
+  //       html.classList.add("has-header-hidden");
+  //     }
+  //     if (args.way === "leave") {
+  //       html.classList.remove("has-header-hidden");
+  //     }
+  //   }
 }

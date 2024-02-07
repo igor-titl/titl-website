@@ -26,8 +26,15 @@ module.exports = {
       {
         test: /\.(c|sa|sc)ss$/i,
         use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
+          {
+            loader: MiniCssExtractPlugin.loader,
+          },
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
           {
             loader: "postcss-loader",
             options: {
@@ -36,14 +43,21 @@ module.exports = {
               },
             },
           },
-          "sass-loader",
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true,
+            },
+          },
         ],
       },
     ],
   },
   optimization: {
     minimizer: [
-      new OptimizeCssAssetsPlugin(),
+      new OptimizeCssAssetsPlugin({
+        cssProcessorOptions: { map: { inline: false, annotation: true } },
+      }),
       new CssMinimizerPlugin(),
       new TerserWebpackPlugin(),
     ],

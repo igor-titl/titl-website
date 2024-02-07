@@ -37,9 +37,29 @@ export default class extends module {
   init() {
 
     this.player = new Player(this.$video);
-    this.updateVideo()
 
-    // this.player.play()
+    this.$video.style.transition = 'opacity .5s ease-in-out'
+    this.$video.style.opacity = 0
+    
+
+    this.player.pause()
+
+
+    this.$observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          this.player.play()
+          this.updateVideo()
+          this.$video.style.opacity = 1
+        } else {
+          this.player.pause()
+        }
+      })
+    })
+
+
+    this.$observer.observe(this.$el)
+
 
     // console.log(this.player)
 
@@ -60,6 +80,7 @@ export default class extends module {
 
 
   play(el){
+    // this.player.play()
     // const { target } = params
 
     // console.log(target)
@@ -93,9 +114,20 @@ export default class extends module {
 
 
   toggleVideo() {
+    // let video = document.querySelectorAll('iframe')
+    // const videoContainer = document.querySelectorAll('[data-video="toggler"]');
     if (this.$el.classList.contains("has-played")) {
       this.muteVideo();
     } else {
+
+      for (let i = 0; i < videoContainer.length; i++) {
+            if (videoContainer[i] !== this.$video) {
+                const player = new Player(videoContainer[i]);
+                videoContainer[i].classList.remove('has-played')
+                player.setVolume(0);
+            }
+        }
+      
       this.unmuteVideo();
     }
   }

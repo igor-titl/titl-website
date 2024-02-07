@@ -4,7 +4,7 @@ export default class extends module {
     constructor(m) {
         super(m)
         this.$el = this.el
-        this.$target = this.getData('href')
+        this.$target = this.el.getAttribute('href')
         this.onClickBind = this.onClick.bind(this)
     }
 
@@ -22,7 +22,6 @@ export default class extends module {
 
     onClick() {
         this.call('scrollTo', { target: this.$target }, 'Scroll')
-        
     }
 
     destroy() {

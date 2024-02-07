@@ -83,3 +83,10 @@
     }
   }
 }
+
+.c-cases-hero__btn-text:nth-child(1),
+.c-cases-hero__btn-container {
+  @media (max-width: 767px) {
+    display: none;
+  }
+}

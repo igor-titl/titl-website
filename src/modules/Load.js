@@ -59,8 +59,8 @@ export default class extends module {
         });
 
         const load = new modularLoad({
-            // enterDelay: 0,
-            exitDelay: 800,
+            enterDelay: 0,
+            exitDelay: 600,
             transitions: {
                 modal: {
                     // enterDelay: 0,
@@ -73,13 +73,12 @@ export default class extends module {
             html.classList.remove('has-dom-ready');
             html.classList.remove('has-dom-ready-callback');
             html.classList.remove('has-dom-animated');
+            html.classList.remove('has-menu-open');
             html.setAttribute('data-scroll-direction', 'up')
-
+            Webflow.destroy()
             html.classList.add('is-preloading');
 
             this.call('close','Nav');
-
-            console.log('loading');
         });
 
         load.on('loaded', (transition, oldContainer, newContainer) => {
@@ -87,6 +86,8 @@ export default class extends module {
             this.call('destroy', oldContainer, 'app');
             this.call('update', newContainer, 'app');
             html.setAttribute('data-scroll-direction', 'up')
+
+            Webflow.ready()
             let url = window.location.href;
 
             if (typeof window._paq !== "undefined") {
@@ -103,6 +104,13 @@ export default class extends module {
                 this.setSizes();
                 
                 body.setAttribute('class',newContainer.getAttribute('class'));
+
+                if(transition == 'modal') {
+                    console.log('update');
+                    setTimeout(() => {
+                        this.call('onResize', null, 'Scroll');
+                    }, 800)
+                }
 
                
                 

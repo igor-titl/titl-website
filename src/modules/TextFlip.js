@@ -13,7 +13,7 @@ export default class extends module {
     init(){
         for(let i = 0; i < TextFlip.length; i++){
            
-            console.log(TextFlip[i]);
+            // console.log(TextFlip[i]);
         //     setInterval(() => {
         //         this.el.innerHTML = TextFlip[i];
                    

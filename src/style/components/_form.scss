@@ -146,6 +146,11 @@ input:-webkit-autofill:focus {
     bottom: 0;
     background-color: #245792;
     opacity: 0;
+
+    @media (max-width: 767px) {
+      right: -0.6rem;
+      width: 0.6rem;
+    }
   }
   .c-form__field-input:focus ~ &::before {
     animation: pulseAttention 600ms steps(1) infinite;

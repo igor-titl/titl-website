@@ -1,8 +1,8 @@
-[data-page="highlights"] {
-  body {
-    background-color: #fff;
-  }
-}
+// [data-page="highlights"] {
+//   body {
+//     background-color: #fff;
+//   }
+// }
 
 .c-higlights-project__video-icon {
   & svg {
@@ -24,28 +24,39 @@
 
 .c-higlights-project__video-wrapper,
 .c-cases__client-video {
-  &:hover {
-    .c-higlights-project__video-icon {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .c-higlights-project__bar {
-      opacity: 1;
-    }
-    .c-higlights-project__video-filter {
-      opacity: 0.15;
-    }
-    .c-higlights-project__video {
-      transform: scale(1.05);
+  @media (hover: hover) {
+    &:hover {
+      .c-higlights-project__video-icon {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .c-higlights-project__bar {
+        opacity: 1;
+      }
+      .c-higlights-project__video-filter {
+        opacity: 0.15;
+      }
+      .c-higlights-project__video {
+        transform: scale(1.05);
+      }
+      &.has-played {
+        .c-higlights-project__video-icon {
+          opacity: 0;
+        }
+      }
     }
   }
   &.has-played {
-    .c-higlights-project__video-icon {
-      opacity: 0;
-    }
     .c-higlights-project__bar {
       opacity: 1;
     }
+  }
+}
+
+.c-higlights-project__video-icon {
+  @media (pointer: coarse) {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -58,7 +69,7 @@
   stroke-dasharray: var(--lenght);
 }
 
-@media (min-width: 767px) {
+@media (min-width: 768px) and (hover: hover) {
   .c-higlights-project__left:hover {
     .c-higlights-project__left-container {
       transform: rotateY(-180deg);
@@ -91,6 +102,12 @@
       transform: translateX(0);
     }
   }
+
+  @media (pointer: coarse) {
+    & {
+      border-radius: 1.5rem;
+    }
+  }
 }
 .c-higlights-project__right {
   opacity: 0;
@@ -103,5 +120,25 @@
     @media (min-width: 768px) {
       transform: translateX(0);
     }
+  }
+}
+
+.c-higlights-project__bottom-button {
+  @media (pointer: coarse) {
+    border-radius: 1rem;
+    flex-direction: row;
+    display: flex;
+  }
+}
+
+.c-higlights__five {
+  @media (pointer: coarse) {
+    border-radius: 1.5rem;
+  }
+}
+
+.c-higlights-project__link {
+  @media (pointer: coarse) {
+    display: none;
   }
 }
