@@ -90,3 +90,17 @@
     display: none;
   }
 }
+
+.c-cases__slider-btn {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  transform: scale(1);
+  transition: opacity 300ms ease, visibility 300ms ease, transform 300ms ease;
+  &.swiper-button-disabled {
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.5);
+  }
+}

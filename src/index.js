@@ -2,6 +2,7 @@ import modular from "modujs";
 import * as modules from "./modules";
 import globals from "./globals";
 import { html } from "./utils/environment";
+import gsap from "gsap";
 import "./style.scss";
 
 const app = new modular({

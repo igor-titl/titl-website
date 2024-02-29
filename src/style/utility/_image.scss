@@ -11,13 +11,13 @@
 .c-lazy .c-image_img,
 .c-lazy .c-slider-image_img {
   opacity: 0;
-  transition: opacity 1.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: opacity 500ms cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .is-ready {
   .c-lazy .c-image_img.-lazy-loaded,
   .c-lazy .c-slider-image_img.-lazy-loaded {
-    transition-delay: 400ms;
+    // transition-delay: 400ms;
     opacity: 1;
   }
 }

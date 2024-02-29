@@ -45,7 +45,7 @@
 
 import { module } from 'modujs';
 import modularLoad from 'modularload';
-// import gsap from 'gsap';
+import gsap from 'gsap';
 import { html, body } from '../utils/environment';
 
 export default class extends module {

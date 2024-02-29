@@ -3,7 +3,7 @@ import { lazyLoadImage } from "../utils/image";
 // import { shuffleText } from "../utils/shuffle";
 import LocomotiveScroll from "locomotive-scroll";
 import { html } from "../utils/environment";
-// import gsap from "gsap";
+import gsap from "gsap";
 
 const HEADER_THRESHOLD = 300;
 
