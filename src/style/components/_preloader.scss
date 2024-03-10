@@ -97,12 +97,9 @@
 // }
 
 html {
-  &.is-loading,
-  &.is-first-load {
+  &:not(.is-first-load),
+  &:not(.is-ready) {
     cursor: wait;
-  }
-  &.is-finish-load.is-ready {
-    cursor: default;
   }
 }
 

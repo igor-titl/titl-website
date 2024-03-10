@@ -22,7 +22,7 @@
 
 @import "swiper/css";
 
-// @import "../node_modules/locomotive-scroll/dist/locomotive-scroll";
+@import "../node_modules/locomotive-scroll/dist/locomotive-scroll";
 
 /* /////////////////
 ////// PAGE /////// 
@@ -32,7 +32,7 @@
 ////// OBJECTS /////// 
 ///////////////////// */
 
-@import "style/objects/scroll";
+// @import "style/objects/scroll";
 
 /* ///////////////////////
 ////// COMPONENTS /////// 
@@ -58,5 +58,6 @@
 @import "style/components/prime";
 @import "style/components/display";
 @import "style/components/finch";
+@import "style/components/scroll-wrapper";
 
 @import "style/components/agency-gallery";

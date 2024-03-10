@@ -62,15 +62,15 @@ module.exports = {
       new TerserWebpackPlugin(),
     ],
     minimize: true,
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          name: "vendors",
-          chunks: "all",
-          test: /[\\/]node_modules[\\/]/,
-          enforce: true,
-        },
-      },
-    },
+    // splitChunks: {
+    //   cacheGroups: {
+    //     vendor: {
+    //       name: "vendors",
+    //       chunks: "all",
+    //       test: /[\\/]node_modules[\\/]/,
+    //       enforce: true,
+    //     },
+    //   },
+    // },
   },
 };

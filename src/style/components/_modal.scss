@@ -1,89 +1,144 @@
-.c-modal {
-  visibility: hidden;
-  pointer-events: none;
-  transition: visibility 1800ms linear;
+// .c-modal {
+//   visibility: hidden;
+//   pointer-events: none;
+//   transition: visibility 1800ms linear;
 
-  html.has-modal-open & {
-    visibility: visible;
-    pointer-events: auto;
-  }
-
-  [data-scroll-section] {
-    padding-bottom: 8.75rem;
-
-    @media (max-width: 767px) {
-      padding-bottom: 5.8rem;
-    }
-  }
-}
-
-.c-scrollbar {
-  .has-modal-open & {
-    opacity: 0;
-  }
-
-  .has-scroll-scrolling .c-modal & {
-    opacity: 1;
-  }
-}
-
-// .c-modal__inner-wrapper {
-//   transform: translateY(100%);
-//   @media (max-width: 767px) {
+//   html.has-modal-open & {
+//     visibility: visible;
+//     pointer-events: auto;
 //   }
-//   transition: transform 800ms $ease-power4-in-out;
-//   .has-modal-open &.is-ready {
-//     transform: translateY(0);
+
+//   [data-scroll-section] {
+//     padding-bottom: 8.75rem;
+
 //     @media (max-width: 767px) {
-//       transform: translateY(0);
+//       padding-bottom: 5.8rem;
 //     }
 //   }
 // }
 
-.c-modal__bg {
-  opacity: 0;
-  transition: all 800ms $ease-power4-out;
-  transition-delay: 0.2s;
-  .has-modal-open & {
-    transition-delay: 0s;
-    opacity: 1;
-  }
-}
-
-.c-modal__wrapper {
-  visibility: hidden;
-  html.has-modal-open & {
-    visibility: visible;
-  }
-}
-
-// .c-layout {
-//   .c-modal & {
-//     transition: transform 800ms $ease-power4-in-out;
-//     transform: translateY(100%);
+// .c-scrollbar {
+//   .has-modal-open & {
+//     opacity: 0;
 //   }
-//   .has-modal-open .c-modal .is-ready & {
-//     transform: translateY(0);
+
+//   .has-scroll-scrolling .c-modal & {
+//     opacity: 1;
+//   }
+// }
+
+// // .c-modal__inner-wrapper {
+// //   transform: translateY(100%);
+// //   @media (max-width: 767px) {
+// //   }
+// //   transition: transform 800ms $ease-power4-in-out;
+// //   .has-modal-open &.is-ready {
+// //     transform: translateY(0);
+// //     @media (max-width: 767px) {
+// //       transform: translateY(0);
+// //     }
+// //   }
+// // }
+
+// .c-modal__bg {
+//   opacity: 0;
+//   transition: all 800ms $ease-power4-out;
+//   transition-delay: 0.2s;
+//   .has-modal-open & {
+//     transition-delay: 0s;
+//     opacity: 1;
+//   }
+// }
+
+// .c-modal__wrapper {
+//   visibility: hidden;
+//   html.has-modal-open & {
+//     visibility: visible;
+//   }
+// }
+
+// // .c-layout {
+// //   .c-modal & {
+// //     transition: transform 800ms $ease-power4-in-out;
+// //     transform: translateY(100%);
+// //   }
+// //   .has-modal-open .c-modal .is-ready & {
+// //     transform: translateY(0);
+// //   }
+// // }
+
+// .c-modal {
+//   // Spinner;
+//   &::before {
+//     content: "";
+//     position: fixed;
+//     right: 1rem;
+//     bottom: 1rem;
+//     display: none;
+//     width: 40px;
+//     height: 40px;
+//     border: 2px solid #fff;
+//     border-radius: 50%;
+//     border-top-color: transparent;
+//     border-right-color: transparent;
+//     animation: spin 0.3s linear infinite;
+//   }
+//   .has-modal-open &::before {
+//     display: block;
 //   }
 // }
 
 .c-modal {
-  // Spinner;
-  &::before {
-    content: "";
-    position: fixed;
-    right: 1rem;
-    bottom: 1rem;
-    display: none;
-    width: 40px;
-    height: 40px;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    border-top-color: transparent;
-    border-right-color: transparent;
-    animation: spin 0.3s linear infinite;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  width: 100%;
+  z-index: 999;
+  visibility: hidden;
+  pointer-events: none;
+  transition: visibility 800ms $ease-power4-in-out;
+
+  html.has-modal-agency &.is-agency,
+  html.has-modal-highlights &.is-highlights {
+    visibility: visible;
   }
-  .has-modal-open &::before {
-    display: block;
+}
+
+.c-modal_overlay {
+  opacity: 0;
+  pointer-events: all;
+  transition: opacity 800ms $ease-power4-in-out;
+
+  html.has-modal-agency &,
+  html.has-modal-highlights & {
+    opacity: 1;
   }
+}
+
+.c-scroll-wrapper_inner {
+  .c-modal & {
+    position: relative;
+    z-index: 9999;
+    transform: translateY(100%);
+    transition: transform 800ms $ease-power4-in-out;
+  }
+
+  html.has-modal-agency .c-modal.is-loaded &,
+  html.has-modal-highlights .c-modal.is-loaded & {
+    transform: translateY(0);
+  }
+}
+
+.c-modal .o-scroll {
+  padding-top: 11rem;
+  @media (max-width: 767px) {
+    padding-top: 6.5rem;
+  }
+}
+
+.c-modal .o-scroll > div {
+  pointer-events: all;
 }

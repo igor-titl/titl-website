@@ -28,5 +28,5 @@
 
 .c-layout {
   border-radius: 0;
-  clip-path: inset(0 round calc(2.5rem - var(--progress) * 2.5rem));
+  clip-path: inset(0 round calc(2.5rem - var(--progress, 0) * 2.5rem));
 }

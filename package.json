@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/nickozy/TITL#readme",
   "dependencies": {
-    "@studio-freight/lenis": "^1.0.29",
+    "@studio-freight/lenis": "^1.0.39",
     "@vimeo/player": "^2.20.1",
     "browserslist": "^4.21.7",
     "gsap": "^3.11.5",

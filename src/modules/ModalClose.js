@@ -7,16 +7,47 @@ export default class extends module {
         super(m);
         this.events = {
             click: {
-                close: 'closeModal'
+                link: 'handleClick'
             }
         }
+
+        // this.el. = bind('click', this.closeModal.bind(this))
+        // this.el.addEventListener('click', this.closeModal.bind(this));
+
+
+
+     
     }
 
-    init(){
+    // init(){
 
+       
+      
+    // }
+
+    handleClick(e) {
+        // e.stopPropagation()
+        e.preventDefault()
+        console.log('handleClick', e)
+
+        const el = e.curTarget;
+        const url = el.href;
+        const transition = 'home';
+
+        // this.setActive(el);
+
+        this.call('goTo', { url, transition }, 'Load');
     }
 
-    closeModal() {
-        this.call('goToPrevious', null, 'Modal')
-    }
+
+
+    // closeModal(el) {
+    //     let link = 'https://titl.webflow.io/'
+    //     let transition = 'home'
+    //     console.log(el)
+    //     // history.back();
+    //     this.call('goTo', { link, transition}, 'Load')
+
+
+    // }
 }
