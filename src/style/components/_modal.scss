@@ -88,57 +88,57 @@
 //   }
 // }
 
-.c-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 100vh;
-  width: 100%;
-  z-index: 999;
-  visibility: hidden;
-  pointer-events: none;
-  transition: visibility 800ms $ease-power4-in-out;
+// .c-modal {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   height: 100vh;
+//   width: 100%;
+//   z-index: 999;
+//   visibility: hidden;
+//   pointer-events: none;
+//   transition: visibility 800ms $ease-power4-in-out;
 
-  html.has-modal-agency &.is-agency,
-  html.has-modal-highlights &.is-highlights {
-    visibility: visible;
-  }
-}
+//   html.has-modal-agency &.is-agency,
+//   html.has-modal-highlights &.is-highlights {
+//     visibility: visible;
+//   }
+// }
 
-.c-modal_overlay {
-  opacity: 0;
-  pointer-events: all;
-  transition: opacity 800ms $ease-power4-in-out;
+// .c-modal_overlay {
+//   opacity: 0;
+//   pointer-events: all;
+//   transition: opacity 800ms $ease-power4-in-out;
 
-  html.has-modal-agency &,
-  html.has-modal-highlights & {
-    opacity: 1;
-  }
-}
+//   html.has-modal-agency &,
+//   html.has-modal-highlights & {
+//     opacity: 1;
+//   }
+// }
 
-.c-scroll-wrapper_inner {
-  .c-modal & {
-    position: relative;
-    z-index: 9999;
-    transform: translateY(100%);
-    transition: transform 800ms $ease-power4-in-out;
-  }
+// .c-scroll-wrapper_inner {
+//   .c-modal & {
+//     position: relative;
+//     z-index: 9999;
+//     transform: translateY(100%);
+//     transition: transform 800ms $ease-power4-in-out;
+//   }
 
-  html.has-modal-agency .c-modal.is-loaded &,
-  html.has-modal-highlights .c-modal.is-loaded & {
-    transform: translateY(0);
-  }
-}
+//   html.has-modal-agency .c-modal.is-loaded &,
+//   html.has-modal-highlights .c-modal.is-loaded & {
+//     transform: translateY(0);
+//   }
+// }
 
-.c-modal .o-scroll {
-  padding-top: 11rem;
-  @media (max-width: 767px) {
-    padding-top: 6.5rem;
-  }
-}
+// .c-modal .o-scroll {
+//   padding-top: 11rem;
+//   @media (max-width: 767px) {
+//     padding-top: 6.5rem;
+//   }
+// }
 
-.c-modal .o-scroll > div {
-  pointer-events: all;
-}
+// .c-modal .o-scroll > div {
+//   pointer-events: all;
+// }

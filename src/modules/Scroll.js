@@ -66,8 +66,8 @@ export default class extends module {
 
 
       // console.log(this.el.getAttribute('data-modul   e-scroll'))
-      console.log(this.$name)
-        if(this.$name === null) return
+      // console.log(this.$name)
+        // if(this.$name === null) return
 
         this.scrollInit();
   
@@ -216,7 +216,7 @@ export default class extends module {
       start() {
         this.locomotiveScroll?.start();
       }
-      update(progress) {
+      update() {
         // console.log(progress)
         this.locomotiveScroll?.resize();
         // this.onScroll({progress});

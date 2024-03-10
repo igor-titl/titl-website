@@ -54,5 +54,4 @@ function init() {
     html.classList.add("is-loaded");
     html.classList.add("is-ready");
   });
-  // });
 }

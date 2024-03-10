@@ -21,6 +21,9 @@
   "homepage": "https://github.com/nickozy/TITL#readme",
   "dependencies": {
     "@studio-freight/lenis": "^1.0.39",
+    "@swup/fragment-plugin": "^1.0.0",
+    "@swup/head-plugin": "^2.2.0",
+    "@swup/preload-plugin": "^3.2.10",
     "@vimeo/player": "^2.20.1",
     "browserslist": "^4.21.7",
     "gsap": "^3.11.5",
@@ -29,6 +32,7 @@
     "modularload": "^1.2.8",
     "splitting": "^1.0.6",
     "swiper": "^11.0.7",
+    "swup": "^4.6.0",
     "text-scrambler": "^0.0.6",
     "text-shuffle": "^1.0.2"
   },
