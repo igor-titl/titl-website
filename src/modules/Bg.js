@@ -26,7 +26,7 @@ export default class extends module {
     //   markers: true,
     // });
 
-    const $marker = true;
+    const $marker = false;
 
 
     const tl = gsap.timeline({
@@ -36,7 +36,7 @@ export default class extends module {
             start: 'top top',
             end: 'bottom top',
             scrub: true,
-            markers: true,
+            markers: $marker,
             id: 1
           },
     });
