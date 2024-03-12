@@ -38,6 +38,8 @@ export default class extends module {
 
         this.$wrapper = typeof this.getData('wrapper') == 'string' ? document.querySelector(this.getData('wrapper')) : window;
 
+        this.$item = this.$("item")
+
 
         // this.dragging = false;
         // this.startY = 0;

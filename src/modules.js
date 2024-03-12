@@ -17,3 +17,5 @@ export { default as Form } from "./modules/Form";
 
 export { default as Modal } from "./modules/Modal";
 export { default as ModalClose } from "./modules/ModalClose";
+
+export { default as Bg } from "./modules/Bg";

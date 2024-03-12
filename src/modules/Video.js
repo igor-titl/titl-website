@@ -17,6 +17,8 @@ export default class extends module {
 
     this.$video = this.$("video")[0];
 
+    
+
     // this.$videoId = this.$video.getAttribute('id');
 
 
@@ -38,9 +40,8 @@ export default class extends module {
 
     this.player = new Player(this.$video);
 
-    this.$video.style.transition = 'opacity .5s ease-in-out'
-    this.$video.style.opacity = 0
-    
+    // this.$video.style.transition = 'opacity .5s ease-in-out'
+    // this.$video.style.opacity = 0
 
     this.player.pause()
 
@@ -50,7 +51,8 @@ export default class extends module {
         if (entry.isIntersecting) {
           this.player.play()
           this.updateVideo()
-          this.$video.style.opacity = 1
+          this.$video.classList.add('is-loaded')
+          // this.$video.style.opacity = 1
         } else {
           this.player.pause()
         }

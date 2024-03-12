@@ -2,7 +2,8 @@ import { module } from 'modujs';
 import Swup from 'swup';
 import SwupFragmentPlugin from '@swup/fragment-plugin';
 import SwupPreloadPlugin from '@swup/preload-plugin';
-import SwupHeadPlugin from '@swup/head-plugin';
+// import SwupBodyClassPlugin from '@swup/body-class-plugin';
+import { body } from '../utils/environment';
 
 
 
@@ -19,6 +20,7 @@ export default class extends module {
             cache: true,
             plugins: [
                 new SwupPreloadPlugin(),
+                // new SwupBodyClassPlugin(),
                 new SwupFragmentPlugin({
                     rules: [
                         {
@@ -71,6 +73,8 @@ export default class extends module {
                     // this.call('show', null, 'Dialog')
                     // setTimeout(() => {
 
+                    body.classList.add('is-modal-active')
+
                     console.log(getComputedStyle(document.getElementById('agency')).getPropertyValue('--duration-in'));
                     setTimeout(() => {
                         this.call('update', null, 'Scroll')
@@ -78,10 +82,10 @@ export default class extends module {
                     }, getComputedStyle(document.getElementById('agency')).getPropertyValue('--duration-in'));
                         
                     // }, 750)
+                } else if(visit.fragmentVisit.name == 'close-modal') {
+                    // this.call('close', null, 'Dialog')
+                    body.classList.remove('is-modal-active')
                 }
-                // } else if(visit.fragmentVisit.name == 'close-modal') {
-                //     this.call('close', null, 'Dialog')
-                // }
             }
 
             for(let container of visit.containers) {
