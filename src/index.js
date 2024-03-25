@@ -2,6 +2,7 @@ import modular from "modujs";
 import * as modules from "./modules";
 import globals from "./globals";
 import { html } from "./utils/environment";
+import { CUSTOM_EVENT, CSS_CLASS } from "./config";
 import gsap from "gsap";
 import "./style.scss";
 
