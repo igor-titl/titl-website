@@ -35,9 +35,9 @@ window.isMobile =
   (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
 if (window.isMobile) {
-  $html.classList.add("is-mobile");
+  html.classList.add("is-mobile");
 } else {
-  $html.classList.add("is-desktop");
+  html.classList.add("is-desktop");
 }
 if (window.isMobile) {
   if (window.innerWidth > 1000) {
@@ -48,14 +48,14 @@ if (window.isMobile) {
 window.isWindows = navigator.platform.indexOf("Win") > -1;
 
 if (window.isWindows) {
-  $html.classList.add("is-windows");
+  html.classList.add("is-windows");
 }
 
 window.isIos =
   /iPad|iPhone|iPod/.test(navigator.platform) ||
   (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 if (window.isIos) {
-  $html.classList.add("is-ios");
+  html.classList.add("is-ios");
 }
 
 window.firstHit = true;
