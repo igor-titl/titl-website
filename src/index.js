@@ -103,3 +103,4 @@ function onResize() {
 }
 window.addEventListener("resize", debounce(onResize, 200));
 onResize();
+console.log("init");
