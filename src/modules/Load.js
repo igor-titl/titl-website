@@ -54,18 +54,18 @@ export default class extends module {
         });
 
         load.hooks.before('content:replace', async (visit) => {
-            console.log('before content replace:', visit);
+            // console.log('before content replace:', visit);
 
             for(let container of visit.containers) {
                 const oldContainer = this.el.querySelector(container)
-                console.log('old container: ', oldContainer)
+                // console.log('old container: ', oldContainer)
                 this.call('destroy', oldContainer, 'app');
 
             }
         });
 
         load.hooks.on('content:replace', (visit) => {
-            console.log('On content replace:', visit);
+            // console.log('On content replace:', visit);
 
             if(visit.fragmentVisit) {
                 if(visit.fragmentVisit.name == 'open-modal') {
@@ -75,10 +75,10 @@ export default class extends module {
 
                     body.classList.add('is-modal-active')
 
-                    console.log(getComputedStyle(document.getElementById('agency')).getPropertyValue('--duration-in'));
+                    // console.log(getComputedStyle(document.getElementById('agency')).getPropertyValue('--duration-in'));
                     setTimeout(() => {
                         this.call('update', null, 'Scroll')
-                        console.log('init')
+                        // console.log('init')
                     }, getComputedStyle(document.getElementById('agency')).getPropertyValue('--duration-in'));
                         
                     // }, 750)
@@ -90,12 +90,12 @@ export default class extends module {
 
             for(let container of visit.containers) {
                 const newContainer = this.el.querySelector(container)
-                console.log('new container: ', newContainer)
+                // console.log('new container: ', newContainer)
                 newContainer.classList.add('transition-fade')
                 this.call('update', newContainer, 'app');
             }
         });
 
-        console.log(this, load);
+        // console.log(this, load);
     }
 }
