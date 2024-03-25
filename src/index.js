@@ -1,6 +1,6 @@
 import modular from "modujs";
 import * as modules from "./modules";
-import debounce from "./utils/tickers";
+import { debounce } from "./utils/tickers";
 import globals from "./globals";
 import { html } from "./utils/environment";
 import { CUSTOM_EVENT, CSS_CLASS } from "./config";
