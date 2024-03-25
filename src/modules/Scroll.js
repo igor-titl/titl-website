@@ -104,9 +104,15 @@ export default class extends module {
           modularInstance: this,
           scrollCallback: this.onScrollBind,
           lenisOptions: {
-            smoothWheel: window.isReducedMotion ? false : true,
-            wrapper: this.$el.parentNode,
-            content: this.$el,
+            wrapper: this.el.parentNode,
+            content: this.el,
+            smoothWheel: true,
+            smoothTouch: true,
+            duration: 1.2,
+            lerp: 0.1,
+            wheelMultiplier: 0.7,
+            touchMultiplier: 1.7,
+            touchInertiaMultiplier: 12
            }
       });
     

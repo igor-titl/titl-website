@@ -1,7 +1,12 @@
 .c-scroll-wrapper_inner {
   html:not(.wf-design-mode) & {
-    max-height: 100vh;
+    height: 100vh;
     overflow-x: hidden;
-    overflow-y: scroll;
+    // overflow-y: scroll;
+    position: relative;
+  }
+
+  html.is-mobile & {
+    max-height: var(--app-height);
   }
 }

@@ -28,6 +28,36 @@ window.onload = (event) => {
   }
 };
 
+window.isMobile =
+  /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+    navigator.userAgent
+  ) ||
+  (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+if (window.isMobile) {
+  $html.classList.add("is-mobile");
+} else {
+  $html.classList.add("is-desktop");
+}
+if (window.isMobile) {
+  if (window.innerWidth > 1000) {
+    window.isTablet = true;
+  }
+}
+
+window.isWindows = navigator.platform.indexOf("Win") > -1;
+
+if (window.isWindows) {
+  $html.classList.add("is-windows");
+}
+
+window.isIos =
+  /iPad|iPhone|iPod/.test(navigator.platform) ||
+  (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+if (window.isIos) {
+  $html.classList.add("is-ios");
+}
+
 window.firstHit = true;
 window.readyDelay = 0.6;
 window.modalDelay = 0.8;
@@ -55,3 +85,19 @@ function init() {
     html.classList.add("is-ready");
   });
 }
+
+// Bind window resize event with default vars
+const resizeEndEvent = new CustomEvent(CUSTOM_EVENT.RESIZE_END);
+function onResize() {
+  $html.style.setProperty(
+    "--vw",
+    `${document.documentElement.clientWidth * 0.01}px`
+  );
+  $html.style.setProperty(
+    "--vh",
+    `${document.documentElement.clientHeight * 0.01}px`
+  );
+  window.dispatchEvent(resizeEndEvent);
+}
+window.addEventListener("resize", debounce(onResize, 200));
+onResize();

@@ -98,4 +98,28 @@ export default class extends module {
 
         // console.log(this, load);
     }
+
+    setSizes() {
+        
+        if (window.innerHeight - document.documentElement.clientHeight > 0) {
+            body.classList.add('has-scrollbar-y');
+            document.documentElement.style.setProperty('--scrollbar',`${window.innerHeight - document.documentElement.clientHeight}px`);
+        } else {
+            body.classList.remove('has-scrollbar-y');
+        }
+
+        // screen height
+        document.documentElement.style.setProperty('--app-availheight',`${window.screen.availHeight}px`);
+        document.documentElement.style.setProperty('--app-height',`${window.innerHeight}px`);
+        document.documentElement.style.setProperty('--app-height-negative',`-${window.innerHeight}px`);
+
+        window.addEventListener('resize',() => {
+
+            if(!window.isMobile) {
+                document.documentElement.style.setProperty('--app-availheight',`${window.screen.availHeight}px`);
+                document.documentElement.style.setProperty('--app-height',`${window.innerHeight}px`);
+                document.documentElement.style.setProperty('--app-height-negative',`-${window.innerHeight}px`);
+            }
+        });
+    }
 }
