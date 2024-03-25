@@ -13,6 +13,7 @@ export default class extends module {
     }
 
     init() {
+        this.setSizes();
         const load = new Swup({
             animateHistoryBrowsing: true,
 
