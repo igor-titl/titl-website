@@ -1,5 +1,7 @@
 .c-scroll-wrapper_inner {
-  max-height: 100vh;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  html:not(.wf-design-mode) & {
+    max-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
 }
