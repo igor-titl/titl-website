@@ -1972,3 +1972,6 @@ body.is-modal-active #highlights.is-changing .c-modal_before {
   -webkit-clip-path: inset(0 round calc(2.5rem - var(--progress, 0) * 2.5rem));
   clip-path: inset(0 round calc(2.5rem - var(--progress, 0) * 2.5rem));
 }
+.dl-c-form__field-wrapper:focus{
+  stroke-width: 0px ;
+}
