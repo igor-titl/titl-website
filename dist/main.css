@@ -1983,7 +1983,8 @@ body.is-modal-active #highlights.is-changing .c-modal_before {
   animation: blink 1s infinite;
   position: absolute;
   background-color: #245792;
-  width: 12rem;
+  width: 4rem;
+  top: 0;
 }
 
 @keyframes blink {
