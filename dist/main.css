@@ -1979,3 +1979,7 @@ body.is-modal-active #highlights.is-changing .c-modal_before {
   color: #245792;
   opacity: 40%;
 }
+.container__cursor {
+  background-color: #245792;
+  width: 4px;
+}
