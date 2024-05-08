@@ -13,30 +13,31 @@ document.addEventListener('DOMContentLoaded', () => {
   
     // Создаем дублирующий элемент
     const mirroredEle = document.createElement('div');
-    mirroredEle.classList.add('container__mirror'); // Добавляем класс для стилей
-    mirroredEle.textContent = textarea.value; // Устанавливаем начальный текст
+    mirroredEle.classList.add('container__mirror'); // Класс для стилей
+    mirroredEle.textContent = textarea.value; // Начальный текст
   
-    // Копируем основные стили из textarea
+    // Копируем стили из textarea
     const textareaStyles = window.getComputedStyle(textarea);
     const styleProperties = [
-      'fontFamily', 'fontSize', 'fontWeight', 'letterSpacing', 
-      'lineHeight', 'padding', 'textDecoration', 'textIndent', 
+      'fontFamily', 'fontSize', 'fontWeight', 'letterSpacing',
+      'lineHeight', 'padding', 'textDecoration', 'textIndent',
       'textTransform', 'whiteSpace', 'wordSpacing', 'wordWrap',
     ];
-    
+  
     styleProperties.forEach((property) => {
       mirroredEle.style[property] = textareaStyles[property];
     });
   
-    // Добавляем элемент в DOM
+    // Добавляем mirroredEle в DOM
     textarea.parentNode.insertBefore(mirroredEle, textarea);
   
     // Обновляем mirroredEle при вводе в textarea
     textarea.addEventListener('input', () => {
       mirroredEle.textContent = textarea.value; // Обновляем текст
+      updateCaret(); // Обновляем позицию каретки
     });
   
-    // Слушатель события `selectionchange` для отображения позиции курсора
+    // Функция для обновления позиции каретки
     const updateCaret = () => {
       if (document.activeElement !== textarea) return;
   
@@ -55,6 +56,12 @@ document.addEventListener('DOMContentLoaded', () => {
       mirroredEle.appendChild(document.createTextNode(textAfter));
     };
   
-    document.addEventListener('selectionchange', updateCaret); // Обновляем позицию каретки
+    // Добавляем событие focus и blur
+    textarea.addEventListener('focus', updateCaret); // Показывает каретку при фокусе
+    textarea.addEventListener('blur', () => {
+      mirroredEle.innerHTML = textarea.value; // Убирает каретку при потере фокуса
+    });
+  
+    document.addEventListener('selectionchange', updateCaret); // Обновляет позицию каретки при изменении выделения
   });
   
