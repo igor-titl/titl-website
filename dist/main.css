@@ -1975,3 +1975,7 @@ body.is-modal-active #highlights.is-changing .c-modal_before {
 .dl-c-form__field-wrapper:focus{
   stroke-width: 0px ;
 }
+.dl-c-form__field-wrapper::placeholder{
+  color: #245792;
+  opacity: 40%;
+}
