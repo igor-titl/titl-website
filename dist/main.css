@@ -1980,11 +1980,10 @@ body.is-modal-active #highlights.is-changing .c-modal_before {
   opacity: 40%;
 }
 .container__cursor {
-  animation: blink 1s infinite;
+  animation: blink 0.4s infinite;
   position: absolute;
   background-color: #245792;
-  width: 4rem;
-  top: 0;
+  width: 2rem;
 }
 
 @keyframes blink {
