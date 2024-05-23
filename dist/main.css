@@ -1980,21 +1980,21 @@ body.is-modal-active #highlights.is-changing .c-modal_before {
   opacity: 40%;
 }
 .container__cursor {
-  animation: blink 0.4s infinite;
+  transition: instant;
+  animation: blink 0.6s infinite;
   position: absolute;
   background-color: #245792;
-  width: 2rem;
+  width: 1rem;
 }
 
 @keyframes blink {
-  0%, 100% {
-      background-color: transparent;
+  0%, 50%, 100% {
+      opacity: 1;
   }
-  50% {
-      background-color: #245792;
+  25%, 75% {
+      opacity: 0;
   }
 }
-
 .container__mirror {
   position: absolute;
   top: 0;
