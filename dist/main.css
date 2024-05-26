@@ -1980,8 +1980,10 @@ body.is-modal-active #highlights.is-changing .c-modal_before {
   opacity: 40%;
 }
 .c-onplan-card-timeline-red-box{
-  width: 24px;
-  height: 100px;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: #FF5252;
+  width: 8px;
+  height: 62px;
   position: absolute;
   right: 50%;
   left: 50%;
