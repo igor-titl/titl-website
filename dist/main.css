@@ -1982,11 +1982,13 @@ body.is-modal-active #highlights.is-changing .c-modal_before {
 .c-onplan-card-timeline-red-box{
   transform: translateX(-50%) translateY(-50%);
   background-color: #FF5252;
-  width: 8px;
+  width: 6px;
   height: 62px;
   position: absolute;
   right: 50%;
   left: 50%;
-  top: auto;
-  bottom: auto;
+  top: 50%;
+  bottom: 50%;
+  z-index: 10;
+  
 }
