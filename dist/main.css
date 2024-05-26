@@ -1678,11 +1678,11 @@ html.is-ready.has-dom-ready.is-finish-load
   -webkit-animation-play-state: running;
   animation-play-state: running;
 }
-.c-onplan__card-3-time:first-child {
+.c-onplan__card-3-time:nth-child(2) {
   -webkit-clip-path: inset(0 50% 0 0);
   clip-path: inset(0 50% 0 0);
 }
-.c-onplan__card-3-time:nth-child(2) {
+.c-onplan__card-3-time:nth-child(3) {
   -webkit-clip-path: inset(0 0 0 50%);
   clip-path: inset(0 0 0 50%);
 }
@@ -1990,5 +1990,5 @@ body.is-modal-active #highlights.is-changing .c-modal_before {
   top: 50%;
   bottom: 50%;
   z-index: 10;
-  
+  border-radius: 20px ;
 }
