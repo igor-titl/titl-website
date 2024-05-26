@@ -1993,6 +1993,9 @@ body.is-modal-active #highlights.is-changing .c-modal_before {
   border-radius: 20px ;
 }
 .c-readtheory__card-rocket{
+  position: absolute;
+  top: 8%;
+  left: -7%;
   width: 100%;
   height: 100%;
 }
