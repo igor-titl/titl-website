@@ -56,16 +56,16 @@
       element.addEventListener('blur', handleBlur);
     });
   
-    document.getElementById("contactform").addEventListener("submit", function (event) {
+    document.getElementById("contactform2").addEventListener("submit", function (event) {
   event.preventDefault();
   
   let hasError = false;
   
     // Валидация email
-    const emailbox = document.getElementById("email-box");
-     const enteremail = document.getElementById("enter-email");
-    const email = document.getElementById('email');
-    const emailError = document.getElementById('emailError');
+    const emailbox = document.getElementById("email-box2");
+     const enteremail = document.getElementById("enter-email2");
+    const email = document.getElementById('email2');
+    const emailError = document.getElementById('emailError2');
     const emailPattern =   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;  // Правильное регулярное выражение
     if (email.value.trim() === '') {
         emailbox.classList.add('error');
@@ -94,10 +94,10 @@
     
     
         // Name test
-    const namebox = document.getElementById("name-box");
-     const enterename = document.getElementById("enter-name");
-    const name = document.getElementById('nameinput');
-    const nameError = document.getElementById('nameError');
+    const namebox = document.getElementById("name-box2");
+     const enterename = document.getElementById("enter-name2");
+    const name = document.getElementById('nameinpu2t');
+    const nameError = document.getElementById('nameError2');
     if (name.value.trim() === '') {
         namebox.classList.add('error');
         name.classList.add('error');
@@ -114,10 +114,10 @@
      
     
         // Msg test
-    const msgbox = document.getElementById("msg-box");
-    const enteremsg = document.getElementById("enter-msg");
-    const msg = document.getElementById('autoresizing');
-    const msgError = document.getElementById('msgError');
+    const msgbox = document.getElementById("msg-box2");
+    const enteremsg = document.getElementById("enter-msg2");
+    const msg = document.getElementById('autoresizing2');
+    const msgError = document.getElementById('msgError2');
     if (msg.value.trim() === '') {
         msgbox.classList.add('error');
         msg.classList.add('error');
@@ -136,7 +136,7 @@
   
         document.addEventListener('DOMContentLoaded', function() {
             const formElements = document.querySelectorAll('input, textarea');
-            const formButton = document.getElementById('form-button');
+            const formButton = document.getElementById('form-button2');
   
             formElements.forEach((element, index) => {
                 element.addEventListener('keydown', function(event) {
