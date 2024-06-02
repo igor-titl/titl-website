@@ -1999,3 +1999,6 @@ body.is-modal-active #highlights.is-changing .c-modal_before {
   width: 100%;
   height: 100%;
 }
+.input-form:focus .form-box{
+  border-bottom: 1px solid var(--main-blue);
+}
