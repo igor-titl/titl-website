@@ -170,20 +170,14 @@ let hasError = false;
           });
       });
 
-      document.addEventListener('focusin', (event) => {
-        if (event.target.classList.contains('input-form')) {
-          const formBox = event.target.querySelector('.form-box');
-          if (formBox) {
-            formBox.classList.add('focused');
-          }
-        }
-      });
+      const inputForms = document.querySelectorAll('.input-form');
+
+      inputForms.forEach(inputForm => {
+        inputForm.addEventListener('focus', () => {
+          inputForm.parentElement.classList.add('focused');
+        });
   
-      document.addEventListener('focusout', (event) => {
-        if (event.target.classList.contains('input-form')) {
-          const formBox = event.target.querySelector('.form-box');
-          if (formBox) {
-            formBox.classList.remove('focused');
-          }
-        }
+        inputForm.addEventListener('blur', () => {
+          inputForm.parentElement.classList.remove('focused');
+        });
       });
