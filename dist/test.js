@@ -96,7 +96,7 @@
         // Name test
     const namebox = document.getElementById("name-box2");
      const enterename = document.getElementById("enter-name2");
-    const name = document.getElementById('nameinpu2t');
+    const name = document.getElementById('nameinput2');
     const nameError = document.getElementById('nameError2');
     if (name.value.trim() === '') {
         namebox.classList.add('error');
