@@ -170,13 +170,20 @@ let hasError = false;
           });
       });
 
-      const inputForm = document.querySelector('.input-form');
-      const formBox = document.querySelector('.form-box');
-  
-      inputForm.addEventListener('focus', () => {
-        formBox.classList.add('focused');
+      document.addEventListener('focusin', (event) => {
+        if (event.target.classList.contains('input-form')) {
+          const formBox = event.target.querySelector('.form-box');
+          if (formBox) {
+            formBox.classList.add('focused');
+          }
+        }
       });
   
-      inputForm.addEventListener('blur', () => {
-        formBox.classList.remove('focused');
+      document.addEventListener('focusout', (event) => {
+        if (event.target.classList.contains('input-form')) {
+          const formBox = event.target.querySelector('.form-box');
+          if (formBox) {
+            formBox.classList.remove('focused');
+          }
+        }
       });
