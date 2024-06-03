@@ -79,7 +79,7 @@ let hasError = false;
   } else if (!emailPattern.test(email.value)) {
       emailbox.classList.add('error');
       email.classList.add('error');
-      emailError.textContent = 'Fix email format';
+      emailError.textContent = 'Fix email';
        enteremail.style.display = "none";
       emailError.style.display = 'block';
       hasError = true;
@@ -92,7 +92,7 @@ let hasError = false;
       if (!hasError) {
           console.log('Server is running on port 3000');
   }
-  
+
   email.onclick = function() {
     emailbox.classList.remove('error');
     email.classList.remove('error');
