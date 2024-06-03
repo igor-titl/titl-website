@@ -1,30 +1,39 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const target = "browserslist";
 const TerserWebpackPlugin = require("terser-webpack-plugin");
-// const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+
+const target = "browserslist";
 
 module.exports = {
   target,
   mode: "production",
-  entry: path.resolve(__dirname, "src", "index.js"),
+  entry: path.resolve(__dirname, "src", "main.js"), // Обновите точку входа на ваш основной файл
   output: {
     path: path.resolve(__dirname, "dist"),
     clean: true,
-    filename: "[name].js",
+    filename: "main.js", // Имя выходного файла
   },
   devtool: false,
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: "styles.css", // Имя выходного файла стилей
     }),
   ],
-
   module: {
     rules: [
       {
-        test: /\.(c|sa|sc)ss$/i,
+        test: /\.js$/, // Регулярное выражение для файлов JavaScript
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+          options: {
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
+      {
+        test: /\.(c|sa|sc)ss$/i, // Регулярное выражение для файлов стилей
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -55,22 +64,9 @@ module.exports = {
   },
   optimization: {
     minimizer: [
-      // new OptimizeCssAssetsPlugin({
-      //   cssProcessorOptions: { map: { inline: false, annotation: true } },
-      // }),
       new CssMinimizerPlugin(),
       new TerserWebpackPlugin(),
     ],
     minimize: true,
-    // splitChunks: {
-    //   cacheGroups: {
-    //     vendor: {
-    //       name: "vendors",
-    //       chunks: "all",
-    //       test: /[\\/]node_modules[\\/]/,
-    //       enforce: true,
-    //     },
-    //   },
-    // },
   },
 };
