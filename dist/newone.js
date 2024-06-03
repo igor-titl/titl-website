@@ -1,5 +1,5 @@
 
-const navHideElements = document.querySelectorAll('.c-header__item .navhide');
+const navHideElements = document.querySelectorAll('.c-header .c-header--home');
 window.addEventListener('scroll', () => {
 if (window.scrollY > 50) { // Выбираем подходящий порог для активации
     navHideElements.classList.add('move-to-hide');
