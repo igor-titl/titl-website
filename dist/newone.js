@@ -93,46 +93,12 @@ let hasError = false;
           console.log('Server is running on port 3000');
   }
   
-  
-  
-      // Name test
-  const namebox = document.getElementById("name-box");
-   const enterename = document.getElementById("enter-name");
-  const name = document.getElementById('nameinput');
-  const nameError = document.getElementById('nameError');
-  if (name.value.trim() === '') {
-      namebox.classList.add('error');
-      name.classList.add('error');
-      nameError.textContent = 'Fill name';
-      enterename.style.display = "none";
-      nameError.style.display = 'block';
-      hasError = true;
-  }  else {
-      namebox.classList.remove('error');
-      name.classList.remove('error');
-      nameError.textContent = '';
-      nameError.style.display = 'none';
-  }
-   
-  
-      // Msg test
-  const msgbox = document.getElementById("msg-box");
-  const enteremsg = document.getElementById("enter-msg");
-  const msg = document.getElementById('autoresizing');
-  const msgError = document.getElementById('msgError');
-  if (msg.value.trim() === '') {
-      msgbox.classList.add('error');
-      msg.classList.add('error');
-      msgError.textContent = 'Fill message';
-      enteremsg.style.display = "none";
-      msgError.style.display = 'block';
-      hasError = true;
-  } else {
-      msgbox.classList.remove('error');
-      msg.classList.remove('error');
-      msgError.textContent = '';
-      msgError.style.display = 'none';
-  }
+  email.onclick = function() {
+    emailbox.classList.remove('error');
+    email.classList.remove('error');
+    emailError.textContent = '';
+    emailError.style.display = 'none';
+};
 
 });
 
