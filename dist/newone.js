@@ -1,3 +1,13 @@
+
+const navHideElements = document.querySelectorAll('.c-header__item .navhide');
+window.addEventListener('scroll', () => {
+if (window.scrollY > 50) { // Выбираем подходящий порог для активации
+    navHideElements.classList.add('move-to-hide');
+} else {
+   navHideElements.classList.remove('move-to-hide');
+}
+});
+
 textarea = document.querySelector("#autoresizing");
 textarea.addEventListener('input', autoResize, false);
 
